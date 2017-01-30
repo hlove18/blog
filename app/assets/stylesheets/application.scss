@@ -1,0 +1,613 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/*============================MINE============================*/
+
+/* CSS Document */
+
+/*============================SetUp============================*/
+
+/*-----------------------------fonts------------------------------*/
+
+@font-face {
+    font-family: webly;
+    src: url(weblysleek_ui/weblysleekuil.ttf);
+}
+
+@font-face {
+    font-family: fireye;
+    src: url(fireye_gf/FireyeGF_3_Regular.ttf);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Titillium Web;
+}
+
+p, div {
+    font-family: Titillium Web, sans-serif;
+}
+
+/*-------------------------------------------------------------------*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    background-color: #E8E8E8;
+}
+
+#content {
+    background-color: white;
+    padding-bottom: 15px;
+    min-height: 363px;
+    word-wrap: break-word;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.alert {
+    background-image: none;
+}
+
+/*================================================================*/
+
+
+
+/*============================Header============================*/
+
+#redLine {
+   border-bottom: 1px solid red;
+}
+
+#headerOverlay{
+    width: 100%;
+    top: 0px;
+    position: absolute;
+    /*background: linear-gradient(to right, #33363b 65%, rgba(0, 98, 100, .8), rgba(255, 0, 100, .6), transparent);*/
+    background: #33363b;
+    height: 257px;
+    padding-bottom: 60px;
+    z-index: -1;
+}
+
+.logo {
+    margin-top: 10px;
+    font-family: fireye;
+    font-size: 88px;
+    color: #CCCCCC;
+    /*text-shadow: 2px 0 black*/
+}
+
+.logo a {
+    text-decoration: none;
+    color: #CCCCCC;
+}
+
+.logo-small {
+    margin-top: 10px;
+    font-family: fireye;
+    font-size: 43px;
+    color: #CCCCCC;
+    text-align: center;
+    /*text-shadow: 2px 0 black*/
+}
+
+.logo-small a {
+    text-decoration: none;
+    color: #CCCCCC;
+}
+
+.subscript {
+    font-size: 20px;
+}
+
+
+
+/*----------------------------navbar-----------------------------*/
+
+.navbar-custom {
+    background-color: #33363b;
+    color: #ffffff;
+    border-radius: 0;
+    /*border-top: solid red 1px;*/
+    margin-bottom: 0px;
+    /*box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 -1px 0 rgba(0,0,0,0.2), inset 1px 0 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2);*/
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: #404246;
+    background-image: none;
+    border: 1px solid #E8E8E8;
+    border-radius: 4px;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+    background-color: #E8E8E8;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-custom .navbar-nav > li > a:hover {
+    color: #333;
+}
+
+.navbar-custom .navbar-nav > .active > a:hover {
+    color: #fff;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.navbar-custom .navbar-brand {
+    color: #eeeeee;
+}
+
+/*----------------------------------------------------------------*/
+
+/*================================================================*/
+
+
+
+/*============================Content============================*/
+
+.page-header {
+    margin-top: 0px;
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+}
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.page-title h1 {
+    border-bottom: 1px dashed #eeeeee;    
+}
+
+#toc-container {
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    padding: 10px 15px;
+    display: inline-block;
+    
+}
+
+#toc-container ul {
+    list-style: none;
+}
+
+.toc-title {
+    font-size: 15px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.featured {
+    margin-bottom: 25px;
+}
+
+#date {
+    color: #777;
+}
+
+/* For post preview - media */ 
+
+.media-object {
+    border-radius: 5px;
+}
+
+.media {
+   margin: 10px;
+}
+
+p.published {
+    color: #777;
+    margin-bottom: 2px;
+}
+
+p.unpublished {
+    color: red;
+    margin-bottom: 2px;
+}
+
+/* Posts table for table on admin page */
+
+#posts_table span.description {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 150px;
+}
+
+#posts_table span.body {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 150px;
+}
+
+/* Post thumbnails */
+
+.media-body p {
+    max-height: 81px;
+    overflow: hidden;
+}
+
+
+/* For log in and sign up (border and center) */ 
+
+.background-tile {
+    box-sizing: border-box;
+    /*border: 1px solid #eeeeee;*/
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1.5em 1.25em;
+}
+
+.middle {
+    text-align: center;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* For log in, log out, and sign up notices on top of home page */
+
+.notice {
+    color: green;
+}
+
+
+/*----------------------------Sidebar-----------------------------*/
+
+.temp_sidebar {
+    height: 80px;
+    width:  100%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    font-size: 15px;
+}
+
+.sidebar {
+    padding: 5px;
+    background-color: #f5f5f5;
+    color: black;
+    height: auto;
+    /*box-shadow: 0px 2px 2px rgba(0, 0, 0, .5);*/
+}
+
+.list-group {
+    box-shadow: none;
+}
+
+/*.list-group-item {
+    border: none;
+    background-color: #f5f5f5;
+}
+
+.sidebar h4 {
+    border-bottom: 1px solid black;
+}*/
+
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover  {
+    background-image: linear-gradient(to bottom,#736262 0,#33363b 100%);
+}
+
+/* For Archives drop down */
+
+button.accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion span.badge {
+    float: right;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    transition: max-height 0.2s ease-out;
+}
+
+/*----------------------------------------------------------------*/
+
+
+
+/*-----------------------------slider------------------------------*/
+
+.temp_home {
+    height: 200px;
+    width:  825px;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    font-size: 50px;
+}
+
+#slider {
+    width: 825px;  /*Prevents from being hidden by .wrapper*/
+    height: 200px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#slider .sliderOverlay {
+    position: absolute;
+    width: 821px; /*Minus 4 for border*/
+    height: 196px; /*Minus 4 for border*/
+    background: rgba(255,255,255, .7);
+    border-radius: 8px; /*Minus 2 for border*/
+    /*background: linear-gradient(to right, rgba(255,255,255, .7) 20%, transparent);
+    /*background: radial-gradient(ellipse at top left, rgba(255,255,255, .9), transparent);*/
+}
+
+.summary {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    width: 825px;
+    height: 185px;
+}
+
+.summary h1 {
+    margin-top: 4px;
+}
+
+.summary .breadcrums {
+    display: inline-block;
+}
+
+.summary .date {
+    display: inline-block;
+}
+
+.date {
+    color: #777;
+}
+
+.summary::before {
+    background-image: linear-gradient( top, 
+            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+        background-image: -moz-linear-gradient( top, 
+            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+        background-image: -ms-linear-gradient( top, 
+            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+        background-image: -o-linear-gradient( top, 
+            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+        background-image: -webkit-linear-gradient( top, 
+            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+    content: "\00a0";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.summaryText {
+    color: black; /*#aaa;*/
+    font-size: 1.1em;
+}
+
+#slider .slides {
+    width: 6000px; /*Large number to fit in all pictures*/
+    height: 200px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    width: 825px;
+    height: 200px;
+    float: left;
+    list-style-type: none;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*----------------------------NavDots/Arrows--------------------------------*/
+
+#NavDots {
+    margin-bottom: 10px;
+    width: 849px;  /*plus 4px (to 945) because this div does not have 2px border around it*/
+    height: 17px;
+    padding: 0px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    cursor: pointer;
+    display: inline-block;  
+    width: 20px;  
+    height: 2px;  
+    vertical-align: middle;
+    margin-right: 10px;  
+    background-color: #bbb; 
+    /*box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5);*/
+    /*border: 1px solid #969696;*/
+}
+
+input[type="radio"]:checked + label {
+    font-size: 50px;
+    line-height: 19px;
+    background-color: #5C5C5C;
+    text-shadow: 0px 0px 3px #eee;
+}
+
+#Arrows {
+	float:right;
+	margin-top: -37px;
+	margin-right: 20px;
+	font-size: 1.8em;
+	background-color: white;
+	border-left: 5px solid white;
+	border-right: 5px solid white;
+	color: #bbb
+}
+
+.prev {
+    cursor: pointer;
+}
+
+.next {
+    cursor: pointer;
+}
+
+
+
+/*-------------------------------------------------------------------*/
+
+/*----------------------------Main Content---------------------------*/
+
+#main {
+    margin-top: 200px;
+    border-top: 1px solid black;
+}
+
+/*-------------------------------------------------------------------*/
+
+
+
+/*----------------------------Mosaic---------------------------*/
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.mosrow {                       /*--------------- include mos to differentiate */
+	-moz-column-width: 18em;
+	-webkit-column-width: 18em;
+	-moz-column-gap: 1em;
+	-webkit-column-gap:1em; 
+  
+}
+
+.item {
+	display: inline-block;
+	padding:  .25rem;
+	width:  100%; 
+}
+
+.tub {
+	position:relative;
+	display: block;
+}
+
+.mosaic {
+	margin: 10px;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*================================================================*/
+
+
+
+/*==============================Footer=============================*/
+
+footer {
+    width: 100%;
+    height: 200px;
+    bottom: 0px;
+    background-color: #33363b;
+    margin-top: 10px;
+}
+
+footer p {
+    margin-top: 5px;
+    margin-left: 20px;
+    position: absolute;
+    font-family: webly;
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+footer .navbar-custom {
+    background-color:#33363b;
+    color:#ffffff;
+    border-radius:0;
+    margin-bottom: 0px;
+}
+
+footer i {
+    color: #ffffff;
+    float: right;
+    margin: 10px;
+}
+
+/*===================================================================*/

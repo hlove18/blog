@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title><%= yield(:page_title) %> | hlove Engineering</title>
+    	<%= csrf_meta_tags %>
+
+    	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300italic' rel='stylesheet' type='text/css'>
+
+		<!-- Prism.js -->
+		<link href="themes/prism.css" rel="stylesheet" />
+		<script src="prism.js"></script>
+
+		<!--Font awesome icons-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<!-- TinyMCE -->
+    	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+	</head>
+
+  	<body>
+  		<!-- Header -->
+  		<%= render 'layouts/header' %>
+		<div class="container">
+			<!-- Navbar -->
+			<%= render 'layouts/navbar' %>
+			<!-- Sidebar -->
+			<%= render 'layouts/sidebar' %>
+			<div id="content" class="col col-sm-9 <%= controller_name %> <%= action_name %>">
+	            <%= yield %>
+	        </div>
+	    </div>
+	    <!-- Footer -->
+	    <%= render 'layouts/footer' %>
+
+	</body>
+</html>

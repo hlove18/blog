@@ -1,0 +1,58 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file. JavaScript code in this file should be added after the last require_* statement.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require bootstrap-sprockets
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+	Prism.highlightAll();
+	tinymce.remove();	//remove previouse intances of tinymce
+	tinymce.init({ selector:'textarea#post_body',
+		plugins: "codesample code charmap image link media table toc",
+		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright bullist numlist outdent indent | code codesample | table toc | image media link charmap',
+		height: 500,
+		content_css: [
+			"https://fonts.googleapis.com/css?family=Titillium+Web:400,600",
+			// same thing: "<%= asset_path('application.scss') %>",
+			"<%= asset_path 'application.scss' %>",
+			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		],
+		browser_spellcheck: true,
+		//content_css : '/app/assets/stylesheets/application.scss',
+  		font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n;Titillium Web=Titillium Web;Webly=webly',
+  		fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt'
+  	})		//load it again
+	archives_dropdown();
+	toc();
+})
+
+//For archives drop down menu
+function archives_dropdown() {
+
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	  acc[i].onclick = function() {
+	    this.classList.toggle("active");
+	    var panel = this.nextElementSibling;
+	    if (panel.style.maxHeight){
+	      panel.style.maxHeight = null;
+	    } else {
+	      panel.style.maxHeight = panel.scrollHeight + 'px';
+	    } 
+	  }
+	}
+};

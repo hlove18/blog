@@ -1,0 +1,33 @@
+<%= simple_form_for @post do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col-md-8">
+      <%= f.input :title, label: "Post Title" %>
+      <%= f.input :date %>
+    </div>
+
+    <div class="col col-md-3">
+      <br>
+      <%= f.label "Banner Image - 825 x 200" %>
+      <%= f.file_field :image %>
+      <br>
+      <%= f.label "Thumbnail - 100 x 100" %>
+      <%= f.file_field :thumbnail %>
+    </div>
+  </div>
+
+  <%= f.input :description, label: "Summary" %>
+  <%= f.input :body %>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>

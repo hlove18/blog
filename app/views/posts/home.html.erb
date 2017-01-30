@@ -1,0 +1,92 @@
+<% provide(:page_title, 'Home') %>
+
+<div class="page-header">
+    <h4>H.LOVE ENGINEERING <small>ELECTRICAL AND MECHANICAL DESIGN</small></h4>
+</div>
+
+<p class="notice"><%= notice %></p>
+
+<% if @posts.count >= 4 %>
+	<div id="NavDots">
+	    <input type="radio" id="button1" name="slides" value="1" checked/>
+	    <label for="button1"></label>
+	    <input type="radio" id="button2" name="slides" value="2"/>
+	    <label for="button2"></label>
+	    <input type="radio" id="button3" name="slides" value="3"/>
+	    <label for="button3"></label>
+	    <input type="radio" id="button4" name="slides" value="4"/>
+	    <label for="button4"></label>
+	    <div id="Arrows">
+	        <span class="prev glyphicon glyphicon-chevron-left"></span>
+	        <span class="next glyphicon glyphicon-chevron-right"></span>
+	    </div>
+	</div>
+	    
+	<div id="slider" class="box">
+	    <!--<a id="sliderOverlayLink" href="artwork.html">-->
+	        <!--<div class="sliderOverlay"></div>-->
+	    <!--</a>-->
+	    <ul class="slides">
+	        <li id="slide1" class="slide"> <%= image_tag @posts[0].image.url(:large) %> </li>
+	        <li id="slide3" class="slide"> <%= image_tag @posts[1].image.url(:large) %> </li>
+	        <li id="slide2" class="slide"> <%= image_tag @posts[2].image.url(:large) %> </li>
+	        <li id="slide4" class="slide"> <%= image_tag @posts[3].image.url(:large) %> </li>
+	        <li id="slideFinal" class="slide"> <%= image_tag @posts[0].image.url(:large) %> </li>
+	    </ul>
+	</div>
+
+	<div class="summary summary1">
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[0].date %> </p>
+	    <h1> <%= @posts[0].title %> </h1>
+	    <p class="summaryText"> <%= @posts[0].description %> </p>
+	</div>
+	<div class="summary summary2">
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[1].date %> </p>
+	    <h1> <%= @posts[1].title %> </h1>
+	    <p class="summaryText"> <%= @posts[1].description %> </p>
+	</div>
+	<div class="summary summary3">
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[2].date %> </p>
+	    <h1> <%= @posts[2].title %> </h1>
+	    <p class="summaryText"> <%= @posts[2].description %> </p>
+	</div>
+	<div class="summary summary4">
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[3].date %> </p>
+	    <h1> <%= @posts[3].title %> </h1>
+	    <p class="summaryText"> <%= @posts[3].description %> </p>
+	</div>
+<% else %>
+	<div class="temp_home">Coming Soon!</div>
+<% end %>
+
+<div id="main">
+    <p>Welcome to my website! On this site, I document the projects I have/am currently working on to aid others and myself working on similar projects.  Like most engineers, I enjoy working on projects in my spare time; however, one thing that is overlooked by many is documentation.  This is where this site comes in.  While documentation can be very time consuming, it solidifies understanding and provides a great resource for others and the maker later down the road.</p>    
+</div>
+
+<% if @posts.count >= 4 %>
+	<h1>Featured:</h1>
+	<br>
+	<div>
+	    <div class="row">
+	    	<div class="col col-sm-6">
+	    		<%= render partial: "layouts/media", locals: {post: @posts[0]} %>
+	    	</div>
+	    	<div class="col col-sm-6">
+	        	<%= render partial: "layouts/media", locals: {post: @posts[1]} %>
+	        </div>
+	    </div>
+
+	    <div class="row">
+	    	<div class="col col-sm-6">
+	        	<%= render partial: "layouts/media", locals: {post: @posts[2]} %>
+	        </div>
+			<div class="col col-sm-6">
+	        	<%= render partial: "layouts/media", locals: {post: @posts[3]} %>
+	        </div>
+	    </div>
+	</div>
+<% end %>
+
+<script>
+	home();
+</script>

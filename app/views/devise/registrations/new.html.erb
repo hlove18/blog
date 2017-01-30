@@ -1,0 +1,40 @@
+<% provide(:page_title, 'Sign up') %>
+
+<div class="page-header">
+    <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / <%= yield(:page_title).upcase %> </h5>
+</div>
+
+<div class="background-tile">
+  <div class="middle">
+    <h2>Sign up</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <br>
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

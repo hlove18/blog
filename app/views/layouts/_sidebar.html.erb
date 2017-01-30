@@ -1,0 +1,49 @@
+<!-- render sidebar -->
+<div class="sidebar col col-sm-3">
+    <h4>Menu</h4>
+    <div class="list-group">
+    	<%= link_to "Home", root_path, class: "list-group-item" %>
+        <%= link_to "Posts", posts_path, class: "list-group-item" %>
+    </div>
+    <h4 style="border-bottom: 1px solid #bbb">Recent</h4>
+        <% @post=Post.order("published_at").last %>
+        <% if @post == nil or @post.published_at == nil %>
+            <div class="temp_sidebar">Coming Soon!</div>
+        <% else %>
+            <%= render partial: "layouts/media", locals: {post: @post} %>
+        <% end %>
+
+    <% if Post.published.length != 0 %> 
+        <h4>Archives</h4>
+        <div id="sidebar" class="list-group">
+
+            <% @published_posts = Post.published %>
+            <% archives = Hash.new(0) %>
+            <% @published_posts.each do |post| %>
+                <% if archives[post.date] == 0 %>
+                    <% archives[post.date] = 1%>
+                <% else %>
+                    <% archives[post.date] += 1 %>
+                <% end %>
+            <% end %>
+
+            <% archives.each do |key, value| %>
+                <button class="accordion"><%= key %> <span class="badge"> <%= value %></span></button>
+                    <div class="panel">
+                        <% @published_posts.each do |post| %>
+                            <% if post.date == key %>
+                                <p><%= link_to post.title, post_path(@post) %></p>
+                            <% end %>
+                        <% end %>
+                    </div>
+            <% end %>
+
+        </div>
+    <% end %>
+
+    <h4>Follow</h4>
+    <div id="sidebar" class="list-group">
+        <a href="https://www.youtube.com/channel/UCgXUs7P5h07Ve3Ah-s76jWQ" class="list-group-item">Youtube&nbsp;&nbsp;<i class="fa fa-youtube"></i></a>
+    </div>
+</div>
+<!-- end render sidebar -->

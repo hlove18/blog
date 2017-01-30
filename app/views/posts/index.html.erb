@@ -1,0 +1,90 @@
+<% provide(:page_title, 'Posts') %>
+
+<div class="page-header">
+    <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / <%= yield(:page_title).upcase %> </h5>
+</div>
+
+<% is_admin = (user_signed_in? and current_user.admin) %>
+
+<% if is_admin %>
+  <h1>Administration</h1>
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th>Total Posts</th>
+          <th>Published</th>
+          <th>Unpublished</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td> <%= @posts.count %> </td>
+          <td> <%= @posts.published.count %> </td>
+          <td> <%= @posts.count - @posts.published.count %> </td>
+        </tr> 
+      </tbody>
+    </table>
+
+    <h1>Posts</h1>
+
+    <table id="posts_table" class='table table-striped'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Summary</th>
+          <!-- Body Column may go here -->
+          <th colspan="4"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td> <span class="description"> <%= post.description %> </span> </td>
+            <!-- Body data may go here -->
+            <% if user_signed_in? and current_user.admin %>
+              <% if post.published %>
+                <td> <%= link_to 'Unpublish', unpublish_post_path(post), class: "btn btn-success", method: :put %> </td>
+              <% else %>
+                <td> <%= link_to 'Publish', publish_post_path(post), class: "btn btn-warning", method: :put %> </td>
+              <% end %>
+            <% end %>
+            <td> <%= link_to 'Show', post %></td>
+            <% if user_signed_in? and current_user.admin %>
+              <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
+              <td> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  <%= link_to 'New Post', new_post_path, class: "btn btn-default" %>
+<% end %>
+
+<% if is_admin %>
+  <h1>All posts - display</h1>
+<% else %>
+  <h1>Posts</h1>
+<% end %>
+
+<% if @posts.length == 0 %>
+  <p> Coming Soon! </p>
+<% end %>
+
+<% pairs = @posts.each_slice(2).to_a %> <!-- Make list got from [a, b, c, d] to [[a, b], [c, d]]-->
+<% pairs.each do |pair| %>
+  <div class="row">
+    <div class="col col-sm-6">
+          <%= render partial: "layouts/media", locals: {post: pair[0]} %> 
+      </div>
+
+      <% if pair.length == 2 %> <!-- necessary for projects list containing and odd number of projects -->
+        <div class="col col-sm-6">
+            <%= render partial: "layouts/media", locals: {post: pair[1]} %> 
+        </div>
+    <% end %>
+  </div>
+<% end %>

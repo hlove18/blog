@@ -1,0 +1,16 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag post.thumbnail.url(:large), :class => "media-object" %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"> <%= link_to post.title, post_path(post) %> </h4>
+    <% if post.published %>
+      <p class="published"> Updated: <%= post.published_at.strftime("%b %d, %Y") %> </p>
+    <% else %>
+      <p class="unpublished"> NOT PUBLISHED </p>
+    <% end %>
+    <p> <%= post.description %> </p>
+  </div>
+</div>

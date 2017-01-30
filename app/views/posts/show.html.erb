@@ -1,0 +1,25 @@
+<% provide(:page_title, @post.title) %>
+
+<div class="page-header">
+  <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS / <%= yield(:page_title).upcase %> </h5>
+</div>
+
+<p class="notice"><%= notice %></p>
+
+<div>
+  <h1 id="title"> <%= @post.title %> </h1>
+  <h5 id="date"> <%= @post.date.upcase %> </h5>
+</div>
+
+<div>
+  <p id="overview"> <%= @post.description %> </p>
+</div>
+
+<div>
+  <p> <%= @post.body.html_safe %> </p>
+</div>
+
+<% if user_signed_in? and current_user.admin %>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-default" %> 
+<% end %>
+<%= link_to 'Back', posts_path, class: "btn btn-default" %>

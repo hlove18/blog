@@ -1,0 +1,22 @@
+<% provide(:page_title, 'Resend confirmation') %>
+
+<div class="page-header">
+    <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / <%= yield(:page_title).upcase %> </h5>
+</div>
+
+<h2>Resend confirmation instructions</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Resend confirmation instructions" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
