@@ -21,7 +21,7 @@ document.addEventListener("turbolinks:load", function() {
 	tinymce.remove();	//remove previouse intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
 		plugins: "codesample code charmap image link media table toc",
-		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright bullist numlist outdent indent | code codesample | table toc | image media link charmap',
+		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright bullist numlist outdent indent | code codesample | table toc | imageupload | image media link charmap',
 		height: 500,
 		content_css: [
 			"https://fonts.googleapis.com/css?family=Titillium+Web:400,600",
@@ -32,7 +32,32 @@ document.addEventListener("turbolinks:load", function() {
 		browser_spellcheck: true,
 		//content_css : '/app/assets/stylesheets/application.scss',
   		font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n;Titillium Web=Titillium Web;Webly=webly',
-  		fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt'
+  		fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+  		setup: function(editor) {
+            var inp = $('<input id="tinymce-uploader" type="file" name="pic" accept="image/*" style="display:none">');
+            $(editor.getElement()).parent().append(inp);
+
+            inp.on("change",function(){
+                var input = inp.get(0);
+                var file = input.files[0];
+                var fr = new FileReader();
+                fr.onload = function() {
+                    var img = new Image();
+                    img.src = fr.result;
+                    editor.insertContent('<img src="'+img.src+'"/>');
+                    inp.val('');
+                }
+                fr.readAsDataURL(file);
+            });
+
+            editor.addButton( 'imageupload', {
+                text:"Upload Image",
+                icon: false,
+                onclick: function(e) {
+                    inp.trigger('click');
+                }
+            });
+        }
   	})		//load it again
 	archives_dropdown();
 	toc();
