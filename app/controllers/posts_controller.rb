@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if user_signed_in? and current_user.admin
-      @posts = Post.all
+      @posts = Post.all.order("id")
     else
       @posts = Post.all.published
     end
