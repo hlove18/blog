@@ -6,7 +6,7 @@
         <%= link_to "Posts", posts_path, class: "list-group-item" %>
     </div>
     <h4 style="border-bottom: 1px solid #bbb">Recent</h4>
-        <% @post=Post.order("published_at").last %>
+        <% @post=Post.all.published.order("published_at").last %>
         <% if @post == nil or @post.published_at == nil %>
             <div class="temp_sidebar">Coming Soon!</div>
         <% else %>
