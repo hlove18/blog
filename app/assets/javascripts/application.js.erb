@@ -20,7 +20,7 @@ document.addEventListener("turbolinks:load", function() {
 	Prism.highlightAll();
 	tinymce.remove();	//remove previouse intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
-		plugins: "codesample code charmap image link media table toc",
+		plugins: "codesample code charmap image imagetools link media table toc",
 		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright bullist numlist outdent indent | code codesample | table toc | imageupload | image media link charmap',
 		height: 500,
 		content_css: [
