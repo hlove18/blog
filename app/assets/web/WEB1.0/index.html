@@ -1,0 +1,121 @@
+<!-- HTML Document -->
+<!doctype html>
+<html>
+    <head>
+        <title>hlove | Engineering</title>
+        <link rel="stylesheet" href="main.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <meta name="keywords" content="hlove, henry love, engineering">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <div id="headerImg"><div id="headerImgCover"><!--Added for updated header img--></div></div>
+                <div id="headerWrap"> 
+                    <ul id="headerNav">
+                        <li class="logo"><a href="index.html">h.love</a><span class="subscript">Engineering</span></li>
+                        <li class="headerNavElemt final navWord"><a href="#">Contact</a></li>
+                        <li class="headerNavElemt">&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+                        <li class="headerNavElemt navWord"><a href="#">About Me</a></li>
+                        <li class="headerNavElemt">&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+                        <li class="headerNavElemt navWord"><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--<navBar>
+                <div class="bar">
+                    <div class="info">
+                        <ul class="left">
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;About Me&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;Contact&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        </ul>
+                        <ul class="right">
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;Date of last update: 4.18.2015&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+            </navBar>-->
+            <content>
+                <div class="wrapper">
+                    <div id="sidebar" class="box">
+                        <ul class="sidebarSuper">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Links</a></li>
+                            <li><a href="#">Appendix</a></li>
+                            <li class="dropdown">Other People
+                                <ul class="sidebarSub">
+                                    <li><a href="http://andrewbirkel.com/">Andrew Birkel</a></li>
+                                    <li><a href="http://workshopchronicles.blogspot.com/">Austin Feathers</a></li>
+                                    <li><a href="http://build-its.blogspot.com/">Ben Katz</a></li>
+                                    <li><a href="http://vedder.se/">Benjamin Vedder</a></li>
+                                    <li><a href="http://www.etotheipiplusone.net/">Charles Guan</a></li>
+                                    <li><a href="http://transistor-man.com/Index.html">Dane Kouttron</a></li>
+                                    <li><a href="http://thevariableconstant.blogspot.com/">Jamison Go</a></li>
+                                    <li><a href="http://scolton.blogspot.com/">Shane Colton</a></li>
+                                    <li><a href="http://geekshavefeelings.com/">Xo Wang</a></li>
+                                    <li><a href=""></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contentWrap">
+                        <div id="slider" class="box">
+                            <a id="sliderOverlayLink" href="#">
+                                <div class="sliderOverlay">
+                                    <div class="summary1">
+                                        <h1>Wii Nunchuk Controller</h1>
+                                        <p>Modifying a wii nunchuk to use as a controller for an electric longboard</p>
+                                    </div>
+                                    <div class="summary2">
+                                        <h1>Custom Electric Longboard</h1>
+                                        <p>Design of a custom, aluminum longboard to be controlled by a wii nunchuk</p>
+                                    </div>
+                                    <div class="summary3">
+                                        <h1>B-200 Rocket Motor</h1>
+                                        <p>Fabrication and testing of a H-class rocket motor</p>
+                                    </div>
+                                    <div class="summary4">
+                                        <h1>Tesla Coil</h1>
+                                        <p>Construction of a 554 watt Tesla coil</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <ul class="slides">
+                                <li id="slide1" class="slide"><img src="Slider/eBoard.jpg"></li>
+                                <li id="slide3" class="slide"><img src="Slider/truck.PNG"></li>
+                                <li id="slide2" class="slide"><img src="Slider/B-200.jpg"></li>
+                                <li id="slide4" class="slide"><img src="Slider/TC.jpg"></li>
+                                <li id="slideFinal" class="slide"><img src="Slider/eBoard.jpg"></li>
+                            </ul>
+                        </div>
+                        <div id="NavDots">
+                            <input type="radio" id="button1" name="slides" value="1" checked/>
+                            <label for="button1"></label>
+                            <input type="radio" id="button2" name="slides" value="2"/>
+                            <label for="button2"></label>
+                            <input type="radio" id="button3" name="slides" value="3"/>
+                            <label for="button3"></label>
+                            <input type="radio" id="button4" name="slides" value="4"/>
+                            <label for="button4"></label>
+                        </div>
+                        <div id="mainContent" class="box">
+                            <h1 class="textHeader">About This Site</h1>
+                            <p class="text">The primary purpose of this website is to serve as a portfolio of my personal projects I work on in my free time.  Like other engineers (see "other people" in sidebar), I believe that documentation is extremely important in STEM and is often overlooked by many builders.   This website will act somewhat as a personal "brain-dump" and also hopefully aid others working on similar projects.  I plan to keep this site dynamic, so content is likely to be added in a semi-regular fashion.</p> <br>
+                            <p class="text">Each project has its own dedicated project page that will be updated as progress is made.  At the end of some of the project pages, there is an "extras" section that goes more indepth - normally pertaining to the math involved.</p>
+                        </div>
+                    </div>
+                </div>
+            </content>
+            
+            <footer>
+                <p>&copy 2015 Henry Love&nbsp;&nbsp;|&nbsp;&nbsp;hlove@mit.edu</p>
+            </footer>
+            
+        </div>
+    </body>
+</html>

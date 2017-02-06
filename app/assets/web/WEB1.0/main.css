@@ -1,0 +1,523 @@
+/* CSS Document */
+
+/*============================SetUp============================*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 30px auto 60px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+figure {
+    display: inline-block;
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+figure img {
+    vertical-align: top;
+}
+
+figure figcaption {
+    background: rgba(255, 255, 255, 0.12);
+    border-top: 1px solid #DBDBDB;
+    text-align: center;
+    font-family: webly;
+    color: white;
+    font-size: 12px;
+    
+}
+
+.latex {
+    color: white;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 10px;
+}
+
+p .text .latex {
+    text-indent: 0px;
+}
+
+.textHeader {
+    font-family: aeroMaticsLightIt;
+    font-size: 32px;
+    color: white;
+    margin-bottom: 20px;
+    border-bottom: 1px solid red;
+    font-weight: 100;
+}
+
+.textSubHeader {
+    font-family: aeroMaticsLightIt;
+    font-size: 24px;
+    color: #F78181;
+    font-weight: 100;
+    border-bottom: 1px solid #DBDBDB;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.textSubSubHeader {
+    font-family: aeroMaticsLightIt;
+    font-size: 22px;
+    color: #F0CCCC;
+    font-weight: 100;
+    border-bottom: 1px solid #DBDBDB;
+    text-indent: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.text {
+    font-family: webly;
+    color: white;
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
+}
+
+#sidebar li a {
+    text-decoration: none;
+    color: white;
+}
+
+#mainContent li a {
+    color: #66f;
+}
+
+#mainContent li a:hover {
+    color: white;
+}
+
+p .text {
+    font-family: webly;
+    color: white;
+    text-indent: 40px;
+}
+
+@font-face {
+    font-family: fireye;
+    src: url(Fonts/fireye_gf/FireyeGF_3_Regular.ttf);
+}
+
+@font-face {
+    font-family: aeroMaticsLightIt;
+    src: url(Fonts/aero_matics/Aero_Matics_Light_Italic.ttf );
+}
+
+@font-face {
+    font-family: aeroMaticsReg;
+    src: url(Fonts/aero_matics/Aero_Matics_Regular.ttf)
+}
+
+@font-face {
+    font-family: webly;
+    src: url(Fonts/weblysleek_ui/weblysleekuil.ttf);
+}
+
+/*----------------------------Tables-----------------------------*/
+
+.table tr th {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.table tr td {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 10px;
+}
+
+tr a {
+    text-decoration: none;
+    color: white;
+}
+
+tr a:hover {
+    text-decoration: underline;
+}
+
+.tableMargins {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.table2 {
+    margin: 15px auto;
+}
+
+.table2 tr th {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.table2 tr td {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid #DBDBDB;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.pictures td {
+    background-color: rgb(224, 224, 224);
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 10px;
+}
+
+/*---------------------------------------------------------------*/
+
+/*================================================================*/
+
+body {
+    background-image: url(Backgrounds/hexabump/hexabump.png);
+    height: 100%;
+}
+
+#container {
+    height: 100%;
+    min-width: 100%;
+    background: linear-gradient(to bottom, #676767, transparent);
+    position: absolute;
+}
+
+/*============================Header============================*/
+
+header {
+    width: 100%;
+    height: 90px;
+    /*background: linear-gradient(to right, blue , red);*/
+    top: 0px;
+    position: relative;
+}
+
+#headerImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*background-image: url(Backgrounds/shattered/shattered.png);
+    opacity: .8;*/
+    background-image: url(TEST.jpg);
+}
+
+#headerImgCover {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 98, 100, .8), rgba(255, 0, 100, .6) 51%, transparent);
+}
+
+#headerWrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.logo {
+    font-family: fireye;
+    font-size: 88px;
+    color: #CCCCCC;
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #CCCCCC;
+}
+
+.subscript {
+    font-size: 20px;
+}
+
+.headerNavElemt {
+	font-family: aeroMaticsLightIt;
+    font-size: 30px;
+	color: white;
+    float: right;
+    margin-top: 50px;
+    list-style: none;
+}
+
+.final {
+    margin-right: 30px;
+}
+
+.black {
+    color: black;
+}
+
+navBar .bar { 
+    margin-top: 1px;
+    background: linear-gradient(to bottom, #D6D6D6, #999999);
+    width: 100%;
+    height: 25px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px #454545;
+}
+
+.info {
+    width: 1200px;
+    margin: auto;
+}
+
+.info ul {
+    list-style: none;
+    font-family: webly;
+    font-size: 15px;
+    height: 25px;
+    padding: 0;
+    margin-top: 2px;
+}
+
+.info ul li {
+    display: inline-block;
+    height: 100%;
+    list-style: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    margin-top: -25px; /*To align in info div*/
+}
+
+.active {
+    color: red;
+    /*box-shadow: -10px 10px 10px -5px  #808080 inset;*/
+}
+
+/*============================Content============================*/
+
+/*----------------------------Sidebar-----------------------------*/
+
+#sidebar {
+    width: 200px;
+    height: auto;
+    float: left;
+    padding: 5px;
+}
+
+.sidebarSuper li{
+    list-style: none;
+    font-family: aeroMaticsLightIt;
+    font-size: 20px;
+    color: white;
+    border-bottom: 1px solid red;
+}
+
+.dropdown {
+    position: relative;   
+}
+
+.sidebarSub {
+    position: absolute;
+    display: none;
+    text-indent: 20px;
+}
+
+.sidebarSub li {
+    list-style: none;
+    font-family: aeroMaticsLightIt;
+    color: white;
+    border-bottom: 1px dashed red;
+    font-size: 18px;
+}
+
+.redBack {
+    background: rgba(255,0,0, 0.1); 
+}
+
+/*----------------------------------------------------------------*/
+
+#contentWrap {
+    width: 950px;
+    height: auto;
+    float: right;
+}
+
+/*-----------------------------slider------------------------------*/
+
+#slider {
+    width: 945px;  /*Prevents from being hidden by .wrapper*/
+    height: 200px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 0;
+}
+
+#slider .sliderOverlay {
+    padding: 5px;
+    position: absolute;
+    width: 935px; /*minus 10px for 5px padding*/
+    height: 190px; /*minus 10px for 5px padding*/
+    background: linear-gradient(to right, rgba(255,255,255, .7) 20%, transparent);
+    /*background: radial-gradient(ellipse at top left, rgba(255,255,255, .9), transparent);*/
+}
+
+#slider .sliderOverlay div {
+    width: 300px;
+    height: auto;
+    position: absolute;
+}
+
+#sliderOverlayLink {
+    color: black;
+}
+
+.summary1 {
+    visibility: hidden;
+}
+
+.summary2 {
+    visibility: hidden;
+}
+
+.summary3 {
+    visibility: hidden;
+}
+
+.summary4 {
+    visibility: hidden;
+}
+
+#slider .sliderOverlay div h1 {
+    font-family: aeroMaticsLightIt;
+    margin-bottom: 15px;
+    border-bottom: 1px solid Black;
+}
+
+#slider .sliderOverlay div p {
+    font-family: webly;
+}
+
+#slider .slides {
+    width: 6000px; /*Large number to fit in all pictures*/
+    height: 200px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    width: 945px;
+    height: 200px;
+    float: left;
+    list-style-type: none;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*----------------------------NavDots--------------------------------*/
+
+#NavDots {
+    margin-bottom: 15px;
+    width: 949px;  /*plus 4px (to 945) because this div does not have 2px border around it*/
+    height: 17px;
+    padding: 0px;
+    text-align: center;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    cursor: pointer;
+    display: inline-block;  
+    width: 15px;  
+    height: 15px;  
+    vertical-align: middle;
+    margin-right: 15px;  
+    background-color: #5C5C5C;  
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    border: 1px solid #969696;
+}
+
+input[type="radio"]:checked + label {
+    font-size: 50px;
+    line-height: 19px;
+    background-color: #DEDEDE; 
+    text-shadow: 0px 0px 3px #eee;
+}
+
+#test {
+    background: red;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+/*----------------------------Main Content---------------------------*/
+
+#mainContent {
+    width: 935px;  /*Prevents from being hidden by .wrapper*/
+    height: auto;
+}
+
+.liIndent {
+    margin-left: 40px;
+}
+
+#rlc {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*==============================Footer=============================*/
+
+footer {
+    width: 100%;
+    height: 30px;
+    bottom: 0px;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+    margin-top: 5px;
+    margin-left: 20px;
+    position: absolute;
+    font-family: webly;
+    color: white;
+    font-size: 16px;
+}
+
+/*===================================================================*/
