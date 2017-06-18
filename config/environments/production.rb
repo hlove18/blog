@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   #Amazon Cloudfront cdn
-  config.action_controller.asset_host = "d335xprz577uhq.cloudfront.net"
+  #config.action_controller.asset_host = "d335xprz577uhq.cloudfront.net"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
