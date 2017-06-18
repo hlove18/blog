@@ -41,10 +41,10 @@ class Post < ApplicationRecord
  	end
 
  	#banner
- 	has_attached_file :image, styles: { large: "825x200>", small: "100x100>" }, default_url: "/images/:style/missing.png"
+ 	has_attached_file :image, styles: { large: "825x200>", small: "100x100>" }, default_url: "/images/banner/:style/missing.png"
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   	#thumbnail
-  	has_attached_file :thumbnail, styles: { large: "100x100>", small: "50x50>" }, default_url: "/images/:style/missing.png"
+  	has_attached_file :thumbnail, styles: { large: "100x100>", small: "50x50>" }, default_url: "/images/thumbnail/:style/missing.png"
   	validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\z/
 end
