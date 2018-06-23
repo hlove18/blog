@@ -24,7 +24,7 @@ gem 'scout_apm'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem "paperclip", "~> 5.0.0"
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'rails_admin', '~> 1.0'
 gem 'annotate'
 gem 'simple_form'

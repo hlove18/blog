@@ -6,7 +6,7 @@
 
 <p class="notice"><%= notice %></p>
 
-<% if @posts.count >= 4 %>
+<% if @posts.count(:id) >= 4 %>
 	<div id="NavDots">
 	    <input type="radio" id="button1" name="slides" value="1" checked/>
 	    <label for="button1"></label>
@@ -63,7 +63,7 @@
     <p>Welcome to my website! On this site, I document the projects I have/am currently working on to aid others and myself working on similar projects.  Like most engineers, I enjoy working on projects in my spare time; however, one thing that is overlooked by many is documentation.  This is where this site comes in.  While documentation can be very time consuming, it solidifies understanding and provides a great resource for others and the maker later down the road.</p>    
 </div>
 
-<% if @posts.count >= 4 %>
+<% if @posts.count(:id) >= 4 %>
 	<h1>Featured:</h1>
 	<br>
 	<div>
