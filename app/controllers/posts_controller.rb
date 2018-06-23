@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     #SLOW: loads everything from a post
     #@posts = Post.all.published.order('published_at DESC')
     #FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data)
-    @posts = Post.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date").order('published_at DESC')
+    @posts = Post.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date").published.order('published_at DESC')
   end
 
   # GET /posts
