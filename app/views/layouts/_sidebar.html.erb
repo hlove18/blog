@@ -6,25 +6,25 @@
         <%= link_to "Posts", posts_path, class: "list-group-item" %>
     </div>
     <h4 style="border-bottom: 1px solid #bbb">Recent</h4>
-        <!-- LINE BELOW SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
+        <!-- LINE BELOW IS SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
         <!-- @post = Post.all.published.order(:published_at).last -->
-        <!-- FAST! Line bellow replaces line above and is much faster! -->
-        <% @post = Post.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date").published.order('published_at DESC').first %>
+        <!-- FAST! Line below replaces line above and is much faster! See post model -->
+        <% @post = Post.minimal_view.published.order('published_at DESC').first %>
         <% if @post == nil or @post.published_at == nil %>
             <div class="temp_sidebar">Coming Soon!</div>
         <% else %>
             <%= render partial: "layouts/media", locals: {post: @post} %>
         <% end %>
 
-    <!-- LINE BELOW SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
+    <!-- LINE BELOW IS SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
     <!-- if Post.published.length != 0 -->
-    <!-- FAST! Line bellow replaces line above and is much faster! -->
+    <!-- FAST! Line below replaces line above and is much faster! -->
     <% if Post.select("id").published.count("id") != 0 %>
         <h4>Archives</h4>
         <div id="sidebar" class="list-group">
-            <!-- LINE BELOW SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
+            <!-- LINE BELOW IS SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
             <!-- @published_posts = Post.published -->
-            <!-- FAST! Line bellow replaces line above and is much faster! -->
+            <!-- FAST! Line below replaces line above and is much faster! -->
             <% @published_posts =  Post.select("id", "title", "date").published %>
             <% archives = Hash.new(0) %>
             <% @published_posts.each do |post| %>

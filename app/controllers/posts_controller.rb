@@ -3,25 +3,25 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def home
-    #SLOW: loads everything from a post
+    #Line below is SLOW: loads everything from a post
     #@posts = Post.all.published.order('published_at DESC')
-    #FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data)
-    @posts = Post.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date").published.order('published_at DESC')
+    #Line below is FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data). See post model
+    @posts = Post.minimal_view.published.order('published_at DESC')
   end
 
   # GET /posts
   # GET /posts.json
   def index
     if user_signed_in? and current_user.admin
-      #SLOW loads everything from a post
+      #Line below is SLOW: loads everything from a post
       #@posts = Post.all.order("id")
-      #FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data)
-      @posts = Post.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date").order('id')
+      #Line below is FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data). See post model
+      @posts = Post.minimal_view.order('id')
     else
-      #SLOW loads everything from a post
+      #Line below is SLOW: loads everything from a post
       #@posts = Post.all.published
-      #FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data)
-      @posts = Post.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date").published
+      #Line below is FAST: only loads the necessary elements from a post, and does not waste time loading body (body = lots of data). See post model
+      @posts = Post.minimal_view.published
     end
   end
 

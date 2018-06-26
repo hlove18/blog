@@ -40,6 +40,11 @@ class Post < ApplicationRecord
  		update(published: false, published_at: nil)
  	end
 
+ 	#Loads only necessary parts of a post to display preivew
+ 	def self.minimal_view
+ 		self.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date")
+ 	end
+
  	#banner
  	has_attached_file :image, styles: { large: "825x200>", small: "100x100>" }, default_url: "/images/banner/:style/missing.png"
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
