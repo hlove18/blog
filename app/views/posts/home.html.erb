@@ -7,7 +7,7 @@
 <p class="notice"><%= notice %></p>
 
 <% if @posts.count(:id) >= 4 %>
-	<div id="NavDots">
+	<div id="NavDots" class="hidden-xs hidden-sm hidden-md">
 	    <input type="radio" id="button1" name="slides" value="1" checked/>
 	    <label for="button1"></label>
 	    <input type="radio" id="button2" name="slides" value="2"/>
@@ -22,7 +22,7 @@
 	    </div>
 	</div>
 	    
-	<div id="slider" class="box">
+	<div id="slider" class="box hidden-xs hidden-sm hidden-md">
 	    <!--<a id="sliderOverlayLink" href="artwork.html">-->
 	        <!--<div class="sliderOverlay"></div>-->
 	    <!--</a>-->
@@ -35,28 +35,28 @@
 	    </ul>
 	</div>
 
-	<div class="summary summary1">
+	<div class="summary summary1 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[0].date %> </p>
 	    <h1> <%= @posts[0].title %> </h1>
 	    <p class="summaryText"> <%= @posts[0].description %> </p>
 	</div>
-	<div class="summary summary2">
+	<div class="summary summary2 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[1].date %> </p>
 	    <h1> <%= @posts[1].title %> </h1>
 	    <p class="summaryText"> <%= @posts[1].description %> </p>
 	</div>
-	<div class="summary summary3">
+	<div class="summary summary3 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[2].date %> </p>
 	    <h1> <%= @posts[2].title %> </h1>
 	    <p class="summaryText"> <%= @posts[2].description %> </p>
 	</div>
-	<div class="summary summary4">
+	<div class="summary summary4 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[3].date %> </p>
 	    <h1> <%= @posts[3].title %> </h1>
 	    <p class="summaryText"> <%= @posts[3].description %> </p>
 	</div>
 <% else %>
-	<div class="temp_home">Coming Soon!</div>
+	<div class="temp_home hidden-xs hidden-sm hidden-md">Coming Soon!</div>
 <% end %>
 
 <div id="main">

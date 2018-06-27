@@ -535,9 +535,12 @@ input[type="radio"]:checked + label {
 
 /*----------------------------Main Content---------------------------*/
 
-#main {
-    margin-top: 200px;
-    border-top: 1px solid black;
+/*Only perform this CSS when the screen shows the slider (slider shows when screen is at least 1200px wide)*/
+@media (min-width: 1200px) {
+    #main {
+        margin-top: 200px;
+        border-top: 1px solid black;
+    }
 }
 
 /*-------------------------------------------------------------------*/
