@@ -644,15 +644,24 @@ footer {
     margin-top: 10px;
 }
 
-footer p {
+footer table {
+    font-family: webly;
+    margin-left: 20px;
+    color: #272822;
+    font-size: 16px;
+    width: 300px;
+}
+
+/* OLD from h.love engineering*/
+/*footer p {
     margin-top: 5px;
     margin-left: 20px;
     position: absolute;
-    font-family: webly;
+    font-family: webly;*/
     /*color: #CCCCCC;*/
-    color: #272822;
+    /*color: #272822;
     font-size: 16px;
-}
+}*/
 
 footer .navbar-custom {
     background-color: #BFD7D9;
