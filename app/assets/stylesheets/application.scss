@@ -36,6 +36,19 @@
     src: font-url("fireye_gf/FireyeGF_3_Regular.ttf");
 }
 
+/*-----------------------------NEW fonts------------------------------*/ 
+
+@font-face {
+    font-family: three_d_thirteen_pixel_fonts;
+    src: font-url("3d_thirteen_pixel_fonts/3D-Thirteen-Pixel-Fonts.ttf");
+}
+
+@font-face {
+    font-family: tiny_box;
+    src: font-url("tiny_box/TINYBBA_.TTF");
+}
+
+/*-----------------------------END NEW fonts------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Titillium Web';
@@ -139,7 +152,9 @@ body {
 
 .code-logo {
     margin-top: 10px;
-    font-family: 'Bungee Hairline', cursive;
+    font-family: 'Bungee Hairline', cursive; /*Use 57px font size*/
+    /*font-family: tiny_box;*/ /*Use 40px font size*/
+    /*font-family: three_d_thirteen_pixel_fonts;*/ /*Use 90px (lower case) 70px (upper case) font size*/
     font-size: 57px;
     color: #f8f8f2;
     text-align: center;
