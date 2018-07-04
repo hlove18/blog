@@ -8,7 +8,15 @@
 
 <div>
   <h1 id="title"> <%= @post.title %> </h1>
-  <h5 id="date"> <%= @post.date %> </h5>
+  <h5 id="date"> <%= @post.date %>&nbsp;&nbsp;
+  	<% if @post.owner == "Love" %>
+  		<span class="love badge">
+  	<% elsif @post.owner == "Bianchini" %>
+  		<span class="bianchini badge">
+  	<% else %>
+  		<span class="bianchini-love badge">
+  	<% end %>
+  	<%= @post.owner %> </span> </h5>
 </div>
 
 <div>
