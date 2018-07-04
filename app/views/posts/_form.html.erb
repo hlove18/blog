@@ -27,6 +27,10 @@
     </div>
   </div>
 
+  <%= f.label :owner %> <br>
+  <%= f.select(:owner, options_for_select([['Bianchini-Love', 'Bianchini-Love'], ['Bianchini', 'Bianchini'], ['Love', 'Love']], f.object.owner || 'Bianchini-Love')) %>
+  <br> <br>
+
   <%= f.input :description, label: "Summary" %>
   <%= f.input :body %>
   <%= f.button :submit, class: "btn btn-success" %>

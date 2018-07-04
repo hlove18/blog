@@ -42,7 +42,7 @@ class Post < ApplicationRecord
 
  	#Loads only necessary parts of a post to display preivew
  	def self.minimal_view
- 		self.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date")
+ 		self.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date", "owner")
  	end
 
  	#banner

@@ -342,11 +342,19 @@ function toc() {
 
 };
 
-
-
-
-
-
+// function owner_badge_coloring() {
+//     var owner = $(".owner").html().trim();
+//     console.log(owner=="Love");
+//     if (owner == "Love") {
+//         $(".owner").css("background-color", "#E07572")
+//     }
+//     if (owner == "Bianchini") {
+//         $(".owner").css("background-color", "#F4C46F")
+//     }
+//     if (owner == "Bianchini-Love") {
+//         $(".owner").css("background-color", "#BFD7D9")
+//     }
+// }
 
 
 $(document).ready(function() {

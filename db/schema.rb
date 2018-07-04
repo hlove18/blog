@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180623041621) do
+ActiveRecord::Schema.define(version: 20180704205034) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20180623041621) do
     t.text     "body"
     t.text     "description"
     t.string   "slug"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180623041621) do
     t.boolean  "published",              default: false
     t.datetime "published_at"
     t.string   "date"
+    t.string   "owner",                  default: "Bianchini-Love"
     t.index ["published"], name: "index_posts_on_published"
     t.index ["published_at"], name: "index_posts_on_published_at"
     t.index ["slug"], name: "index_posts_on_slug", unique: true

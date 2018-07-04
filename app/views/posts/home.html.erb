@@ -36,25 +36,61 @@
 	</div>
 
 	<div class="summary summary1 hidden-xs hidden-sm hidden-md">
-	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[0].date %> </p>
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[0].date %>&nbsp;&nbsp;
+	    	<% if @posts[0].owner == "Love" %>
+  				<span class="love badge">
+  			<% elsif @posts[0].owner == "Bianchini" %>
+  				<span class="bianchini badge">
+  			<% else %>
+  				<span class="bianchini-love badge">
+  			<% end %>
+  			<%= @posts[0].owner %> </span>  </p>
 	    <h1> <%= @posts[0].title %> </h1>
 	    <p class="summaryText"> <%= @posts[0].description %> </p>
 	</div>
+	
 	<div class="summary summary2 hidden-xs hidden-sm hidden-md">
-	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[1].date %> </p>
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[1].date %>&nbsp;&nbsp;
+	    	<% if @posts[1].owner == "Love" %>
+  				<span class="love badge">
+  			<% elsif @posts[1].owner == "Bianchini" %>
+  				<span class="bianchini badge">
+  			<% else %>
+  				<span class="bianchini-love badge">
+  			<% end %>
+  			<%= @posts[1].owner %> </span>  </p>
 	    <h1> <%= @posts[1].title %> </h1>
 	    <p class="summaryText"> <%= @posts[1].description %> </p>
 	</div>
+	
 	<div class="summary summary3 hidden-xs hidden-sm hidden-md">
-	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[2].date %> </p>
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[2].date %>&nbsp;&nbsp;
+	    	<% if @posts[2].owner == "Love" %>
+  				<span class="love badge">
+  			<% elsif @posts[2].owner == "Bianchini" %>
+  				<span class="bianchini badge">
+  			<% else %>
+  				<span class="bianchini-love badge">
+  			<% end %>
+  			<%= @posts[2].owner %> </span>  </p>
 	    <h1> <%= @posts[2].title %> </h1>
 	    <p class="summaryText"> <%= @posts[2].description %> </p>
 	</div>
+	
 	<div class="summary summary4 hidden-xs hidden-sm hidden-md">
-	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[3].date %> </p>
+	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[3].date %>&nbsp;&nbsp;
+	    	<% if @posts[3].owner == "Love" %>
+  				<span class="love badge">
+  			<% elsif @posts[3].owner == "Bianchini" %>
+  				<span class="bianchini badge">
+  			<% else %>
+  				<span class="bianchini-love badge">
+  			<% end %>
+  			<%= @posts[3].owner %> </span>  </p>
 	    <h1> <%= @posts[3].title %> </h1>
 	    <p class="summaryText"> <%= @posts[3].description %> </p>
 	</div>
+	
 <% else %>
 	<div class="temp_home hidden-xs hidden-sm hidden-md">Coming Soon!</div>
 <% end %>
