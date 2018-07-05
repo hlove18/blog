@@ -32,7 +32,7 @@
       <thead>
         <tr>
           <th>Title</th>
-          <th>Summary</th>
+          <th>Owner</th>
           <!-- Body Column may go here -->
           <th colspan="4"></th>
         </tr>
@@ -42,7 +42,16 @@
         <% @posts.each do |post| %>
           <tr>
             <td><%= post.title %></td>
-            <td> <span class="description"> <%= post.description %> </span> </td>
+            <td>
+              <% if post.owner == "Love" %>
+                <span class="love badge">
+              <% elsif post.owner == "Bianchini" %>
+                <span class="bianchini badge">
+              <% else %>
+                <span class="bianchini-love badge">
+              <% end %>
+              <%= post.owner %> </span>
+            </td>
             <!-- Body data may go here -->
             <% if user_signed_in? and current_user.admin %>
               <% if post.published %>
