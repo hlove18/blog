@@ -54,8 +54,21 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Titillium Web';
 }
 
-p, div {
+p, div, td, li {
     font-family: 'Titillium Web';
+}
+
+td {
+    padding: 3px;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*-----------------------------TinyMCE Fixes-------------------------*/
+
+#tinymce {
+    background-color: #ffffff;
+    padding: 5px;
 }
 
 /*-------------------------------------------------------------------*/
@@ -623,7 +636,7 @@ input[type="radio"]:checked + label {
 
 /*----------------------------Mosaic---------------------------*/
 
-*, *:before, *:after {box-sizing:  border-box !important;}
+/**, *:before, *:after {box-sizing:  border-box !important;}*/
 
 
 .mosrow {                       /*--------------- include mos to differentiate */
