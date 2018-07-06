@@ -20,8 +20,8 @@ document.addEventListener("turbolinks:load", function() {
 	Prism.highlightAll();
 	tinymce.remove();	//remove previous intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
-		plugins: "codesample code charmap image imagetools link media table toc",
-		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright bullist numlist outdent indent | code codesample | table toc | imageupload | image media link charmap',
+		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
+		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright numlist bullist outdent indent | code codesample | table toc | imageupload | image media link charmap',
 		height: 500,
 		content_css: [
 			"https://fonts.googleapis.com/css?family=Titillium+Web:400,600",
@@ -30,6 +30,7 @@ document.addEventListener("turbolinks:load", function() {
 			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 		],
 		browser_spellcheck: true,
+		branding: false,
 		//content_css : '/app/assets/stylesheets/application.scss',
   		font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n;Titillium Web=Titillium Web;Webly=webly',
   		fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
