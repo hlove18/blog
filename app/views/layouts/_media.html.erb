@@ -17,7 +17,7 @@
   <div class="media-body">
     <h4 class="media-heading"> <%= link_to post.title, post_path(post) %> </h4>
     <% if post.published %>
-      <p class="published"> Updated: <%= post.published_at.strftime("%b %d, %Y") %> </p>
+      <p class="published"> Updated: <%= post.updated_at.strftime("%b %d, %Y") %> </p>
     <% else %>
       <p class="unpublished"> NOT PUBLISHED </p>
     <% end %>
