@@ -1,0 +1,18 @@
+<!-- render posts table small -->
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Total Posts</th>
+      <th>Published</th>
+      <th>Unpublished</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td> <%= posts.count(:id) %> </td>
+      <td> <%= posts.published.count(:id) %> </td>
+      <td> <%= posts.count(:id) - posts.published.count(:id) %> </td>
+    </tr> 
+  </tbody>
+</table>

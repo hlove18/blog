@@ -1,0 +1,19 @@
+<!-- render display posts -->
+<% if @posts.length == 0 %>
+  <p> Coming Soon! </p>
+<% end %>
+
+<% pairs = @posts.each_slice(2).to_a %> <!-- Make list got from [a, b, c, d] to [[a, b], [c, d]]-->
+<% pairs.each do |pair| %>
+  <div class="row">
+    <div class="col col-sm-6">
+          <%= render partial: "layouts/media", locals: {post: pair[0]} %> 
+      </div>
+
+      <% if pair.length == 2 %> <!-- necessary for projects list containing and odd number of projects -->
+        <div class="col col-sm-6">
+            <%= render partial: "layouts/media", locals: {post: pair[1]} %> 
+        </div>
+    <% end %>
+  </div>
+<% end %>

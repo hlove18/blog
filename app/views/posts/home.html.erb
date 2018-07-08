@@ -37,56 +37,28 @@
 
 	<div class="summary summary1 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[0].date %>&nbsp;&nbsp;
-	    	<% if @posts[0].owner == "Love" %>
-  				<span class="love badge">
-  			<% elsif @posts[0].owner == "Bianchini" %>
-  				<span class="bianchini badge">
-  			<% else %>
-  				<span class="bianchini-love badge">
-  			<% end %>
-  			<%= @posts[0].owner %> </span>  </p>
+	    	<%= render partial: "posts/badge", locals: {post: @posts[0]} %></p>
 	    <h1> <%= @posts[0].title %> </h1>
 	    <p class="summaryText"> <%= @posts[0].description %> </p>
 	</div>
 	
 	<div class="summary summary2 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[1].date %>&nbsp;&nbsp;
-	    	<% if @posts[1].owner == "Love" %>
-  				<span class="love badge">
-  			<% elsif @posts[1].owner == "Bianchini" %>
-  				<span class="bianchini badge">
-  			<% else %>
-  				<span class="bianchini-love badge">
-  			<% end %>
-  			<%= @posts[1].owner %> </span>  </p>
+	    	<%= render partial: "posts/badge", locals: {post: @posts[1]} %></p>
 	    <h1> <%= @posts[1].title %> </h1>
 	    <p class="summaryText"> <%= @posts[1].description %> </p>
 	</div>
 	
 	<div class="summary summary3 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[2].date %>&nbsp;&nbsp;
-	    	<% if @posts[2].owner == "Love" %>
-  				<span class="love badge">
-  			<% elsif @posts[2].owner == "Bianchini" %>
-  				<span class="bianchini badge">
-  			<% else %>
-  				<span class="bianchini-love badge">
-  			<% end %>
-  			<%= @posts[2].owner %> </span>  </p>
+	    	<%= render partial: "posts/badge", locals: {post: @posts[2]} %></p>
 	    <h1> <%= @posts[2].title %> </h1>
 	    <p class="summaryText"> <%= @posts[2].description %> </p>
 	</div>
 	
 	<div class="summary summary4 hidden-xs hidden-sm hidden-md">
 	    <p class="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS</p>&nbsp;&nbsp;&nbsp;&nbsp;<p class="date"> <%= @posts[3].date %>&nbsp;&nbsp;
-	    	<% if @posts[3].owner == "Love" %>
-  				<span class="love badge">
-  			<% elsif @posts[3].owner == "Bianchini" %>
-  				<span class="bianchini badge">
-  			<% else %>
-  				<span class="bianchini-love badge">
-  			<% end %>
-  			<%= @posts[3].owner %> </span>  </p>
+	    	<%= render partial: "posts/badge", locals: {post: @posts[3]} %></p>
 	    <h1> <%= @posts[3].title %> </h1>
 	    <p class="summaryText"> <%= @posts[3].description %> </p>
 	</div>
@@ -96,7 +68,7 @@
 <% end %>
 
 <div id="main">
-    <p>Welcome to Bianchini-Love Engineering (BLE), the website of Bibit Bianchini and Henry Love!  On this website, you will find both of our portfolios, including projects we’ve each done separately (labeled as <span class="love badge">LOVE</span> and <span class="bianchini badge">BIANCHINI</span>) as well as our collaborations (labeled as <span class="bianchini-love badge">BIANCHINI-LOVE</span>).  While most of the projects here relate to our specific training in electrical (Henry) and mechanical (Bibit) engineering, we document other kinds of projects here too, such as music, art, and this website itself.  We continually update this site with new content and features, so be sure to check often for updates!  For more information about the creators, please visit the <%= link_to 'About', about_path %> page.</p>    
+    <p>Welcome to Bianchini-Love Engineering (BLE), the website of Bibit Bianchini and Henry Love!  On this website, you will find both of our portfolios, including projects we’ve each done separately (labeled as <span class="love_badge badge">LOVE</span> and <span class="bianchini_badge badge">BIANCHINI</span>) as well as our collaborations (labeled as <span class="bianchini_love_badge badge">BIANCHINI-LOVE</span>).  While most of the projects here relate to our specific training in electrical (Henry) and mechanical (Bibit) engineering, we document other kinds of projects here too, such as music, art, and this website itself.  We continually update this site with new content and features, so be sure to check often for updates!  For more information about the creators, please visit the <%= link_to 'About', about_path %> page.</p>    
 </div>
 
 <% if @posts.count(:id) >= 4 %>

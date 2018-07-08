@@ -1,0 +1,9 @@
+<!-- render badge -->
+<% if post.owner == "Love" %>
+    <span class="love_badge badge">
+<% elsif post.owner == "Bianchini" %>
+    <span class="bianchini_badge badge">
+<% else %>
+    <span class="bianchini_love_badge badge">
+<% end %>
+<%= post.owner %> </span>
