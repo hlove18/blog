@@ -299,22 +299,77 @@ body {
 }
 
 /* CSS below colors owner badges*/
-.love {
+
+.love_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E07572;
 }
 
-.bianchini {
+.bianchini_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #F4C46F;
 }
 
-.bianchini-love {
+.bianchini_love_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #BFD7D9;
+}
+
+/*active hover:*/
+
+.btn.love_badge:hover {
+    background-color: #F2C4C2;
+}
+
+.btn.bianchini_badge:hover {
+    background-color: #fAE2B8;
+}
+
+.btn.bianchini_love_badge:hover {
+    background-color: #D8E6E8;
+}
+
+/*inactive:*/
+
+.inactive_love_badge {
+    color: #272822;
+    text-transform: uppercase;
+    background-color: #E8E8E8;
+}
+
+.inactive_bianchini_badge {
+    color: #272822;
+    text-transform: uppercase;
+    background-color: #E8E8E8;
+}
+
+.inactive_bianchini_love_badge {
+    color: #272822;
+    text-transform: uppercase;
+    background-color: #E8E8E8;
+}
+
+.inactive_badge {
+    color: #272822;
+    text-transform: uppercase;
+    background-color: #E8E8E8;
+}
+
+/*inactive hover:*/
+
+.btn.inactive_love_badge:hover {
+    background-color: #F2C4C2;
+}
+
+.btn.inactive_bianchini_badge:hover {
+    background-color: #fAE2B8;
+}
+
+.btn.inactive_bianchini_love_badge:hover {
+    background-color: #D8E6E8;
 }
 
 /* For post preview - media */ 
@@ -360,6 +415,12 @@ p.unpublished {
     overflow: hidden;
 }
 
+/* New Post Error */
+
+#error_explanation *{
+    color: red;
+    font-family: Consolas;
+}
 
 /* For log in and sign up (border and center) */ 
 

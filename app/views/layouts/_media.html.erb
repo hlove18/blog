@@ -1,16 +1,10 @@
+<!-- render media -->
 <div class="media">
   <div class="media-left">
     <a href="#">
       <%= image_tag post.thumbnail.url(:large), :class => "media-object" %>
       <p>
-        <% if post.owner == "Love" %>
-            <span class="love badge">
-        <% elsif post.owner == "Bianchini" %>
-            <span class="bianchini badge">
-        <% else %>
-            <span class="bianchini-love badge">
-        <% end %>
-        <%= post.owner %> </span>
+        <%= render partial: "posts/badge", locals: {post: post} %>
       </p>
     </a>
   </div>

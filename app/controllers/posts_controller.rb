@@ -25,6 +25,31 @@ class PostsController < ApplicationController
     end
   end
 
+  #personal pages:
+  def bianchini
+    if user_signed_in? and current_user.admin
+      @posts = Post.where(:owner => 'Bianchini').minimal_view.order('id')
+    else
+      @posts = Post.where(:owner => 'Bianchini').minimal_view.published
+    end
+  end
+
+  def love
+    if user_signed_in? and current_user.admin
+      @posts = Post.where(:owner => 'Love').minimal_view.order('id')
+    else
+      @posts = Post.where(:owner => 'Love').minimal_view.published
+    end
+  end
+
+  def bianchini_love
+    if user_signed_in? and current_user.admin
+      @posts = Post.where(:owner => 'Bianchini-Love').minimal_view.order('id')
+    else
+      @posts = Post.where(:owner => 'Bianchini-Love').minimal_view.published
+    end
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
