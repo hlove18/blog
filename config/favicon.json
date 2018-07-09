@@ -3,7 +3,7 @@
     "favicon_design": {
         "ios": {
             "picture_aspect": "background_and_margin",
-            "background_color": "#33363b",
+            "background_color": "#BFD7D9",
             "margin": "14%",
             "assets": {
                 "ios6_and_prior_icons": false,
@@ -17,7 +17,7 @@
         ],
         "windows": {
             "picture_aspect": "no_change",
-            "background_color": "#33363b",
+            "background_color": "#BFD7D9",
             "on_conflict": "override",
             "assets": {
                 "windows_80_ie_10_tile": false,
@@ -45,7 +45,7 @@
         },
         "safari_pinned_tab": {
             "picture_aspect": "silhouette",
-            "theme_color": "#33363b"
+            "theme_color": "#BFD7D9"
         }
     },
     "settings": {
