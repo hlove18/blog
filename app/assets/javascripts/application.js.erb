@@ -21,7 +21,7 @@ document.addEventListener("turbolinks:load", function() {
 	tinymce.remove();	//remove previous intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
 		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
-		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright numlist bullist outdent indent | code codesample | table toc | imageupload | image media link charmap',
+		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright numlist bullist outdent indent | table toc | code codesample codeSC | imageupload | image media link charmap',
 		height: 500,
 		content_css: [
 			"https://fonts.googleapis.com/css?family=Titillium+Web:400,600",
@@ -51,6 +51,7 @@ document.addEventListener("turbolinks:load", function() {
                 fr.readAsDataURL(file);
             });
 
+            //Image Upload
             editor.addButton( 'imageupload', {
                 text:"Upload Image",
                 icon: false,
@@ -58,6 +59,16 @@ document.addEventListener("turbolinks:load", function() {
                     inp.trigger('click');
                 }
             });
+
+            //Inline code
+            editor.addButton('codeSC', {
+		      	text: '<code>',
+		      	icon: false,
+		      	onclick: function () {
+		        	editor.insertContent('<code>Text inside code</code>');
+		      	}
+		    });
+
         }
   	})		//load it again
 	archives_dropdown();
