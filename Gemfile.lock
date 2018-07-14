@@ -148,7 +148,7 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (1.0.0)
-    puma (3.11.4)
+    puma (3.12.0)
     rack (2.0.5)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
@@ -251,7 +251,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.14)
+    uglifier (4.1.15)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -300,4 +300,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
