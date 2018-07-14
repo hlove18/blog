@@ -27,7 +27,7 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'rails_admin', '~> 1.0'
 gem 'annotate'
 gem 'simple_form'
-gem 'aws-sdk', '~> 2.7.3'
+gem 'aws-sdk', '< 2.0'
 
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
