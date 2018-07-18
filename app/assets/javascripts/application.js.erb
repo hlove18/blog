@@ -17,7 +17,7 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
-	Prism.highlightAll();
+	//Prism.highlightAll();
 	tinymce.remove();	//remove previous intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
 		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
@@ -29,6 +29,20 @@ document.addEventListener("turbolinks:load", function() {
 			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
 			"<%= asset_path 'application.scss' %>"
 		],
+		codesample_content_css: "<%= asset_path 'prism.css' %>",
+		codesample_languages: [
+	        {text: 'HTML/XML', value: 'markup'},
+	        {text: 'JavaScript', value: 'javascript'},
+	        {text: 'CSS', value: 'css'},
+	        {text: 'PHP', value: 'php'},
+	        {text: 'Ruby', value: 'ruby'},
+	        {text: 'Python', value: 'python'},
+	        {text: 'Java', value: 'java'},
+	        {text: 'C', value: 'c'},
+	        {text: 'C#', value: 'csharp'},
+	        {text: 'C++', value: 'cpp'},
+	        {text: 'Bash', value: 'bash'}
+    	],
 		browser_spellcheck: true,
 		branding: false,
 		//content_css : '/app/assets/stylesheets/application.scss',
