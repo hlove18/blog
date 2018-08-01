@@ -339,6 +339,7 @@ function toc() {
         return false; //prevent default of page reset
     })
 
+
 };
 
 // function owner_badge_coloring() {
