@@ -356,7 +356,6 @@ function toc() {
 //     }
 // }
 
-
 $(document).ready(function() {
     toc();
 });

@@ -17,7 +17,7 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
-	//Prism.highlightAll();
+	Prism.highlightAll();
 	tinymce.remove();	//remove previous intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
 		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
