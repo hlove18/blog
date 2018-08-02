@@ -4,6 +4,8 @@
     <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS / <%= yield(:page_title).upcase %> </h5>
 </div>
 
+<p class="notice"><%= notice %></p>
+
 <h1>Editing Post</h1>
 
 <%= render 'form', post: @post %>

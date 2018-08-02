@@ -98,8 +98,13 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+        if saving?
+          format.html { redirect_to edit_post_path(@post), notice: 'Post was successfully saved.' }
+          format.json { render :edit, status: :ok, location: @post }
+        else
+          format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+          format.json { render :show, status: :ok, location: @post }
+        end
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -126,5 +131,10 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :description, :image, :thumbnail, :date, :owner)
+    end
+
+    # For "Save" button
+    def saving?
+      params[:commit] == "Save"
     end
 end
