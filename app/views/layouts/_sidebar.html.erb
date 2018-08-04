@@ -28,6 +28,20 @@
             <% @published_posts =  Post.select("id", "title", "date").published %>
             <% years = Hash.new(0) %>
             <% dates = Hash.new(0) %>
+            <% month_lookup = {
+                "January" => 1, 
+                "February" => 2, 
+                "March" => 3, 
+                "April" => 4,
+                "May" => 5,
+                "June" => 6,
+                "July" => 7,
+                "August" => 8,
+                "September" => 9,
+                "October" => 10,
+                "November" => 11,
+                "December" => 12,}
+            %>
             <% @published_posts.each do |post| %>
                 <% post_year = post.date.split(" ")[1] %>
                 <% if years[post_year] == 0 %>
@@ -36,21 +50,24 @@
                     <% years[post_year] += 1 %>
                 <% end %>
 
+                <!-- Date: [amount, month order] -->
+                <% post_month = post.date.split(" ")[0] %>
                 <% if dates[post.date] == 0 %>
-                    <% dates[post.date] = 1 %>
+                    <% dates[post.date] = [1, month_lookup[post_month]]  %>
                 <% else %>
-                    <% dates[post.date] += 1 %>
+                    <% dates[post.date][0] += 1 %>
                 <% end %>
             <% end %>
 
             <% years = years.sort_by { |year, number| year }.reverse %>
+            <% dates = dates.sort_by { |date, stats| stats[1] } %>
             <% years.each do |year, number| %>
                 <a class="list-group-item dropdown-parent"><%= year %> <span class="badge"> <%= number %> </span></a>
                     <div class="dropdown-container">
-                        <% dates.each do |date, amount| %>
+                        <% dates.each do |date, stats| %>
                             <% if date.split(" ")[1] == year %>
                                 <% month = date.split(" ")[0] %>
-                                <a class="list-group-item dropdown-parent dropdown-element" ><%= month %> <span class="badge"> <%= amount %> </span></a>
+                                <a class="list-group-item dropdown-parent dropdown-element" ><%= month %> <span class="badge"> <%= stats[0] %> </span></a>
                                     <div class="dropdown-container">
                                         <% @published_posts.each do |post| %>
                                             <% if post.date == date %>
