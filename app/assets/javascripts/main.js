@@ -322,9 +322,7 @@ function home() {
 
 
 function toc() {
-
  /*Implementing Table of Contents "hide" and "show"*/
-    
     var contracted = false;
     $(".toc-toggle").click(function() {
         if (! contracted) {
@@ -338,8 +336,6 @@ function toc() {
         $(".toc-list").animate({height: "toggle", width: "toggle"});
         return false; //prevent default of page reset
     })
-
-
 };
 
 // function owner_badge_coloring() {

@@ -22,3 +22,7 @@
 
 # Ignore Mac thumbnails
 /.DS_Store
+*.DS_Store
+
+# Ignore local posts
+public/system/posts/
