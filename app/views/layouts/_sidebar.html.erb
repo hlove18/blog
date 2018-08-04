@@ -26,28 +26,64 @@
             <!-- @published_posts = Post.published -->
             <!-- FAST! Line below replaces line above and is much faster! -->
             <% @published_posts =  Post.select("id", "title", "date").published %>
-            <% archives = Hash.new(0) %>
+            <% years = Hash.new(0) %>
+            <% dates = Hash.new(0) %>
             <% @published_posts.each do |post| %>
-                <% if archives[post.date] == 0 %>
-                    <% archives[post.date] = 1%>
+                <% post_year = post.date.split(" ")[1] %>
+                <% if years[post_year] == 0 %>
+                    <% years[post_year] = 1 %>
                 <% else %>
-                    <% archives[post.date] += 1 %>
+                    <% years[post_year] += 1 %>
+                <% end %>
+
+                <% if dates[post.date] == 0 %>
+                    <% dates[post.date] = 1 %>
+                <% else %>
+                    <% dates[post.date] += 1 %>
                 <% end %>
             <% end %>
 
-            <% archives.each do |key, value| %>
-                <button class="accordion"><%= key %> <span class="badge"> <%= value %></span></button>
-                    <div class="panel">
-                        <% @published_posts.each do |post| %>
-                            <% if post.date == key %>
-                                <p><%= link_to post.title, post_path(post.id) %></p>
+            <% years = years.sort_by { |year, number| year }.reverse %>
+            <% years.each do |year, number| %>
+                <a class="list-group-item dropdown-parent"><%= year %> <span class="badge"> <%= number %> </span></a>
+                    <div class="dropdown-container">
+                        <% dates.each do |date, amount| %>
+                            <% if date.split(" ")[1] == year %>
+                                <% month = date.split(" ")[0] %>
+                                <a class="list-group-item dropdown-parent dropdown-element" ><%= month %> <span class="badge"> <%= amount %> </span></a>
+                                    <div class="dropdown-container">
+                                        <% @published_posts.each do |post| %>
+                                            <% if post.date == date %>
+                                                <%= link_to post.title, post_path(post.id), class: "list-group-item sub-dropdown-element" %>
+                                            <% end %>
+                                        <% end %>
+                                    </div>
                             <% end %>
                         <% end %>
                     </div>
             <% end %>
-
         </div>
     <% end %>
+
+    <!-- Example Dropdown
+    <div id="sidebar" class="list-group">
+        <a class="list-group-item dropdown-parent"> Year <span class="badge"> 8 </span></a>
+            <div class="dropdown-container">
+                <a class="list-group-item dropdown-parent dropdown-element" > Month <span class="badge"> 4 </span></a>
+                    <div class="dropdown-container">
+                        <a class="list-group-item sub-dropdown-element" > Project1 </a>
+                        <a class="list-group-item sub-dropdown-element" > Project2 </a>
+                        <a class="list-group-item sub-dropdown-element" > Project3 </a>
+                    </div>
+
+                <a class="list-group-item dropdown-parent dropdown-element" > Month2 <span class="badge"> 4 </span></a>
+                    <div class="dropdown-container">
+                        <a class="list-group-item sub-dropdown-element" > Project1 </a>
+                        <a class="list-group-item sub-dropdown-element" > Project2 </a>
+                        <a class="list-group-item sub-dropdown-element" > Project3 </a>
+                    </div>
+            </div>
+    </div> -->
 
     <h4>Follow</h4>
     <div id="sidebar" class="list-group">
