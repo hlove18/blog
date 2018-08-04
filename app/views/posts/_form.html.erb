@@ -1,38 +1,50 @@
 <%= simple_form_for @post do |f| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <% if post.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+                <% post.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="row">
+        <div class="col col-md-8">
+            <%= f.input :title, label: "Post Title" %>
+            <br>
+            <%= f.input :date %>
+        </div>
+
+        <div class="col col-md-3">
+            <br>
+            <%= f.label "Banner Image - 825 x 200" %>
+            <%= f.file_field :image %>
+            <% if @post.image_file_name == nil %>
+                <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.
+            <% else %>
+                <span class="glyphicon glyphicon-ok-circle"></span> <%= @post.image_file_name %>
+            <% end %>
+
+            <br> <br>
+            <%= f.label "Thumbnail - 100 x 100" %>
+            <%= f.file_field :thumbnail %>
+            <% if @post.thumbnail_file_name == nil %>
+                <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.
+            <% else %>
+                <span class="glyphicon glyphicon-ok-circle"></span> <%= @post.thumbnail_file_name %>
+            <% end %>
+        </div>
     </div>
-  <% end %>
 
-  <div class="row">
-    <div class="col col-md-8">
-      <%= f.input :title, label: "Post Title" %>
-      <%= f.input :date %>
-    </div>
+    <%= f.label :owner %> <br>
+    <%= f.select(:owner, options_for_select([['Bianchini-Love', 'Bianchini-Love'], ['Bianchini', 'Bianchini'], ['Love', 'Love']], f.object.owner || 'Bianchini-Love')) %>
+    <br> <br>
 
-    <div class="col col-md-3">
-      <br>
-      <%= f.label "Banner Image - 825 x 200" %>
-      <%= f.file_field :image %>
-      <br>
-      <%= f.label "Thumbnail - 100 x 100" %>
-      <%= f.file_field :thumbnail %>
-    </div>
-  </div>
-
-  <%= f.label :owner %> <br>
-  <%= f.select(:owner, options_for_select([['Bianchini-Love', 'Bianchini-Love'], ['Bianchini', 'Bianchini'], ['Love', 'Love']], f.object.owner || 'Bianchini-Love')) %>
-  <br> <br>
-
-  <%= f.input :description, label: "Summary" %>
-  <%= f.input :body %>
-  <%= f.button :submit, class: "btn btn-success" %>
-  <%= f.button :submit, "Save", class: "btn btn-success" %>
+    <%= f.input :description, label: "Summary" %>
+    <%= f.input :body %>
+    <%= f.button :submit, class: "btn btn-success" %>
+    <%= f.button :submit, "Save", class: "btn btn-success" %>
 <% end %>
