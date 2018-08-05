@@ -431,16 +431,17 @@ p.unpublished {
 
 .background-tile {
     box-sizing: border-box;
-    /*border: 1px solid #eeeeee;*/
+    border: 1px solid #eeeeee;
     background-color: #fff;
     border-radius: 5px;
     padding: 1.5em 1.25em;
 }
 
 .middle {
-    text-align: center;
+    /*text-align: center;*/
     position: relative;
     width: 50%;
+    min-width: 260px;
     height: 100%;
     margin: 0 auto;
     padding: 10px;
