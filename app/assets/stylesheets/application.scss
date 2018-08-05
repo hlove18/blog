@@ -89,11 +89,6 @@ body {
     word-wrap: break-word;
 }
 
-/*#content p img {
-    width: 100%;
-    height: auto;
-}*/
-
 .box {
     background: rgba(255, 255, 255, 0.12);
     border: 2px solid #DBDBDB;
@@ -298,6 +293,16 @@ body {
     color: #777;
 }
 
+/* CSS below gives coloring to uploaded banner and thubnail image icons */
+
+.glyphicon-remove-circle {
+    color: #DB0000;
+}
+
+.glyphicon-ok-circle {
+    color: green;
+}
+
 /* CSS below colors owner badges*/
 
 .love_badge {
@@ -441,7 +446,7 @@ p.unpublished {
     padding: 10px;
 }
 
-/* For log in, log out, and sign up notices on top of home page */
+/* For log in, log out, sign up, save, and updated notices on top of home page */
 
 .notice {
     color: green;
@@ -670,23 +675,34 @@ input[type="radio"]:checked + label {
 
 /*-------------------------------------------------------------------*/
 
-/*----------------------------Main Content---------------------------*/
+/*----------------------------Responsive CSS---------------------------*/
 
-/*Only perform this CSS when the screen shows the slider (slider shows when screen is at least 1200px wide)*/
+/*Only perform this CSS when the screen is larger than 1200px */
 @media (min-width: 1200px) {
+    /* Show the slider */
     #main {
         margin-top: 200px;
         border-top: 1px solid black;
     }
 }
 
-.glyphicon-remove-circle {
-    color: #DB0000;
+/*Only perform this CSS whne the screen is smaller than 1200px*/
+@media (max-width: 1199px) {
+    /*Resize post body images to fit in the body*/
+    #content p img {
+        width: 100%;
+        height: auto;
+    }
 }
 
-.glyphicon-ok-circle {
-    color: green;
+/*Only perform this CSS whne the screen is smaller than 992px*/
+@media (max-width: 991px) {
+    /*Resize embedded youtube videos to fit in the body*/
+    #content iframe {
+        width: 100%;
+    }
 }
+
 
 /*-------------------------------------------------------------------*/
 
@@ -742,8 +758,8 @@ footer table {
     font-family: webly;
     margin-left: 20px;
     color: #272822;
-    font-size: 16px;
-    width: 300px;
+    font-size: 14px;
+    width: 260px;
 }
 
 /* OLD from h.love engineering*/

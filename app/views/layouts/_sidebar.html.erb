@@ -13,7 +13,28 @@
         <% if @post == nil or @post.published_at == nil %>
             <div class="temp_sidebar">Coming Soon!</div>
         <% else %>
-            <%= render partial: "layouts/media", locals: {post: @post} %>
+            <!-- render media; unique responsiveness, so render is not used -->
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <%= image_tag @post.thumbnail.url(:large), :class => "media-object" %>
+                        <p>
+                            <%= render partial: "posts/badge", locals: {post: @post} %>
+                        </p>
+                    </a>
+                </div>
+                <div class="media-body hidden-md hidden-sm">
+                    <h4 class="media-heading"> <%= link_to @post.title, post_path(@post) %> </h4>
+                    <p class="published"> Updated: <%= @post.updated_at.strftime("%b %d, %Y") %> </p>
+                    <p> <%= @post.description %> </p>
+                </div>
+                <div class="media-body visible-md visible-sm">
+                    <h4 class="media-heading"> <%= link_to @post.title, post_path(@post) %> </h4>
+                    <p class="published"> Updated: <%= @post.updated_at.strftime("%b %d, %Y") %> </p>
+                    <p> <%= @post.description %> </p>
+                </div>
+            </div>
+
         <% end %>
 
     <!-- LINE BELOW IS SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
