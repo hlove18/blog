@@ -36,10 +36,23 @@
 			<!-- Navbar -->
 			<%= render 'layouts/navbar' %>
 			<!-- Sidebar -->
-			<%= render 'layouts/sidebar' %>
+			<div class="sidebar col col-sm-3 visible-xs">
+				<h4>Menu</h4>
+			    <div class="list-group">
+			    	<%= link_to "Home", root_path, class: "list-group-item" %>
+			        <%= link_to "Posts", posts_path, class: "list-group-item" %>
+			    </div>
+			</div>
+			<div class="visible-sm visible-md visible-lg visible-xl">
+	        	<%= render 'layouts/sidebar' %>
+	        </div>
 			<div id="content" class="col col-sm-9 <%= controller_name %> <%= action_name %>">
 	            <%= yield %>
 	        </div>
+	        <div class="visible-xs">
+	        	<%= render 'layouts/sidebar' %>
+	        </div>
+			
 	    </div>
 	    <!-- Footer -->
 	    <%= render 'layouts/footer' %>
