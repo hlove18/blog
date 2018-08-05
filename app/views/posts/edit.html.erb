@@ -1,7 +1,7 @@
 <% provide(:page_title, "Edit #{@post.title}") %>
 
 <div class="page-header">
-    <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS / <%= yield(:page_title).upcase %> </h5>
+    <h5 id="breadcrums"><i class="fa fa-folder-open-o"></i>&nbsp;&nbsp;HOME / POSTS / <%= "EDITING " + @post.title.upcase %> </h5>
 </div>
 
 <p class="notice"><%= notice %></p>
