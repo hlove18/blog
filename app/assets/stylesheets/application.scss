@@ -747,7 +747,8 @@ input[type="radio"]:checked + label {
 
 footer {
     width: 100%;
-    height: 200px;
+    min-height: 200px;
+    height: 100%;
     bottom: 0px;
     background-color: #BFD7D9;
     /*Background of old H.Love Engineering: */
@@ -758,6 +759,7 @@ footer {
 footer table {
     font-family: webly;
     margin-left: 20px;
+    margin-bottom: 10px;
     color: #272822;
     font-size: 14px;
     width: 260px;
