@@ -13,14 +13,15 @@
 
     <div class="row">
         <div class="col col-md-8">
-            <%= f.input :title, label: "Post Title" %>
-            <br>
+            <%= f.input :title, label: "Post title" %>
             <%= f.input :date %>
+            <%= f.label :owner %> <br>
+            <%= f.select(:owner, options_for_select([['Bianchini-Love', 'Bianchini-Love'], ['Bianchini', 'Bianchini'], ['Love', 'Love']], f.object.owner || 'Bianchini-Love')) %>
         </div>
 
         <div class="col col-md-3">
             <br>
-            <%= f.label "Banner Image - 825 x 200" %>
+            <%= f.label "Banner image - 825 x 200" %>
             <%= f.file_field :image %>
             <% if @post.image_file_name == nil %>
                 <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.
@@ -39,9 +40,57 @@
         </div>
     </div>
 
-    <%= f.label :owner %> <br>
-    <%= f.select(:owner, options_for_select([['Bianchini-Love', 'Bianchini-Love'], ['Bianchini', 'Bianchini'], ['Love', 'Love']], f.object.owner || 'Bianchini-Love')) %>
-    <br> <br>
+    <!-- NEW ACTIVE STORAGE UPLOADS -->
+    <% if post.uploads.attached? %>
+        <div>
+            <h3> <i class="fa fa-download" aria-hidden="true"></i> Project Documents </h3>
+            <% @post.uploads.each do |upload| %>
+                <div class="download_button">
+                    <%= link_to delete_post_upload_post_url(upload.id), method: :delete, data: { confirm: 'Any unsaved changes in the post will be lost. Are you sure?' } do %>
+                        <span class="trash"><i class="fa fa-times" aria-hidden="true"></i></span>
+                    <% end %>
+                    <% if post.upload_type(upload) == "audio" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-volume-up" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% elsif post.upload_type(upload) == "zip" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% elsif post.upload_type(upload) == "pdf" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% elsif post.upload_type(upload) == "code" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-code" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% elsif post.upload_type(upload) == "3d" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-cube" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% elsif post.upload_type(upload) == "gcode" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% elsif post.upload_type(upload) == "laser" %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-object-ungroup" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                            <i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+    <br>
+    <%= f.label "Add uploads" %> <i class="fa fa-upload" aria-hidden="true"></i>
+    <%= f.file_field :uploads, multiple: true, direct_upload: true %> 
+    <br>
+
 
     <%= f.input :description, label: "Summary" %>
     <%= f.input :body %>
