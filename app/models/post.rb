@@ -9,14 +9,14 @@
 #  slug                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  image_file_name        :string
-#  image_content_type     :string
-#  image_file_size        :integer
-#  image_updated_at       :datetime
-#  thumbnail_file_name    :string
-#  thumbnail_content_type :string
-#  thumbnail_file_size    :integer
-#  thumbnail_updated_at   :datetime
+##  image_file_name        :string
+##  image_content_type     :string
+##  image_file_size        :integer
+##  image_updated_at       :datetime
+##  thumbnail_file_name    :string
+##  thumbnail_content_type :string
+##  thumbnail_file_size    :integer
+##  thumbnail_updated_at   :datetime
 #  published              :boolean          default("f")
 #  published_at           :datetime
 #
@@ -42,7 +42,7 @@ class Post < ApplicationRecord
 
  	#Loads only necessary parts of a post to display preivew
  	def self.minimal_view
- 		self.select("id", "title", "description", "slug", "created_at", "updated_at", "image_file_name", "thumbnail_file_name", "published", "published_at", "date", "owner")
+ 		self.select("id", "title", "description", "slug", "created_at", "updated_at", "published", "published_at", "date", "owner")
  	end
 
  	# active storage update 11/25/18

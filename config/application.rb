@@ -1,6 +1,8 @@
 require_relative 'boot'
 
 require 'rails/all'
+# updating to active storage 11/22/18
+require "active_storage/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

@@ -23,19 +23,19 @@
             <br>
             <%= f.label "Banner image - 825 x 200" %>
             <%= f.file_field :image %>
-            <% if @post.image_file_name == nil %>
+            <% if not @post.image.attached? %>
                 <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.
             <% else %>
-                <span class="glyphicon glyphicon-ok-circle"></span> <%= @post.image_file_name %>
+                <span class="glyphicon glyphicon-ok-circle"></span> <%= @post.image.filename %>
             <% end %>
 
             <br> <br>
             <%= f.label "Thumbnail - 100 x 100" %>
             <%= f.file_field :thumbnail %>
-            <% if @post.thumbnail_file_name == nil %>
+            <% if not @post.thumbnail.attached? %>
                 <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.
             <% else %>
-                <span class="glyphicon glyphicon-ok-circle"></span> <%= @post.thumbnail_file_name %>
+                <span class="glyphicon glyphicon-ok-circle"></span> <%= @post.thumbnail.filename %>
             <% end %>
         </div>
     </div>

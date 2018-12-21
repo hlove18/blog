@@ -303,6 +303,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage (~> 5.2.2)
   annotate
   aws-sdk (< 2.0)
   bootsnap (>= 1.1.0)

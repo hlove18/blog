@@ -81,6 +81,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    # Active storage
+    # @post.image.attach(params[:image])
+    # @post.thumbnail.attach(params[:thumbnail])
 
     respond_to do |format|
       if @post.save
