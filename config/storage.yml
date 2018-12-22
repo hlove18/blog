@@ -1,18 +1,39 @@
+# DO NOT COPY AND PASTE INTO THIS FILE ????!!!!!
+# BELOW THIS LINE WAS TYPED FROM SCRATCH. WORKS!!!
 test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
 
 local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
-   service: S3
-   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-   region: us-east-1
-   bucket: <%= ENV['AWS_BUCKET'] %>
+  service: S3
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  region: us-east-1
+  bucket: <%= ENV['AWS_BUCKET'] %>
+
+
+##########################
+# BELOW THIS LINE WAS COPIED - DOES NOT WORK!!!!!!!!
+# test:
+#   service: Disk
+#   root: <%= Rails.root.join("tmp/storage") %>
+
+# local:
+#   service: Disk
+#   root: <%= Rails.root.join("storage") %>
+
+# # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
+# amazon:
+#    service: S3
+#    access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+#    secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+#    region: us-east-1
+#    bucket: <%= ENV['AWS_BUCKET'] %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
