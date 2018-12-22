@@ -16,7 +16,7 @@
 	<div>
 	    <h3> <i class="fa fa-download" aria-hidden="true"></i> Project Documents </h3>
 	    <% @post.uploads.each do |upload| %>
-	    	<div style="display:inline-block;">
+	    	<div style="display:inline-block;margin-bottom: 5px;">
 	    		<% if @post.upload_type(upload) == "audio" %>
 	    			<%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
 						<i class="fa fa-volume-up" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
