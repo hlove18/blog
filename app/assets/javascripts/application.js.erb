@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require activestorage
 
 document.addEventListener("turbolinks:load", function() {
 	Prism.highlightAll();
@@ -89,6 +90,7 @@ document.addEventListener("turbolinks:load", function() {
 	// For updated archives dropdown
 	dropdown();
 	toc();
+	download_hover();
 })
 
 // Updated archives dropdown function
@@ -130,3 +132,13 @@ function archives_dropdown() {
 	}
 };
 
+//For making "x" visible when hovering over download button
+function download_hover() {
+	$(".download_button").hover(function(){
+    $(this).find(".trash").css("visibility", "visible");
+    $(this).css("margin-left", "5px");
+    }, function(){
+    $(this).find(".trash").css("visibility", "hidden");
+    $(this).css("margin-left", "0px");
+  });
+};

@@ -81,6 +81,9 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    # Active storage
+    # @post.image.attach(params[:image])
+    # @post.thumbnail.attach(params[:thumbnail])
 
     respond_to do |format|
       if @post.save
@@ -122,6 +125,13 @@ class PostsController < ApplicationController
     end
   end
 
+  # Active storage delete upload.
+  def delete_post_upload
+    @upload = ActiveStorage::Attachment.find(params[:id])
+    @upload.purge
+    redirect_back(fallback_location: request.referer)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -130,7 +140,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :description, :image, :thumbnail, :date, :owner)
+      params.require(:post).permit(:title, :body, :description, :image, :thumbnail, :date, :owner, uploads: [])
     end
 
     # For "Save" button

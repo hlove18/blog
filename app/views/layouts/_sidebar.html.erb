@@ -2,7 +2,7 @@
 <div class="sidebar col col-sm-3">
     <h4 class="hidden-xs">Menu</h4>
     <div class="list-group hidden-xs">
-    	<%= link_to "Home", root_path, class: "list-group-item" %>
+        <%= link_to "Home", root_path, class: "list-group-item" %>
         <%= link_to "Posts", posts_path, class: "list-group-item" %>
     </div>
     <h4 style="border-bottom: 1px solid #bbb">Recent</h4>
@@ -17,7 +17,9 @@
             <div class="media">
                 <div class="media-left">
                     <a href="#">
-                        <%= image_tag @post.thumbnail.url(:large), :class => "media-object" %>
+                        <!-- ACTIVE RECORD UPDATE: 11/25/18 -->
+                        <!-- image_tag @post.thumbnail.url(:large), :class => "media-object" -->
+                        <%= image_tag @post.thumbnail.variant(resize: "100x100"), :class => "media-object" %>
                         <p>
                             <%= render partial: "posts/badge", locals: {post: @post} %>
                         </p>

@@ -27,11 +27,18 @@
 	        <!--<div class="sliderOverlay"></div>-->
 	    <!--</a>-->
 	    <ul class="slides">
-	        <li id="slide1" class="slide"> <%= image_tag @posts[0].image.url(:large) %> </li>
-	        <li id="slide3" class="slide"> <%= image_tag @posts[1].image.url(:large) %> </li>
-	        <li id="slide2" class="slide"> <%= image_tag @posts[2].image.url(:large) %> </li>
-	        <li id="slide4" class="slide"> <%= image_tag @posts[3].image.url(:large) %> </li>
-	        <li id="slideFinal" class="slide"> <%= image_tag @posts[0].image.url(:large) %> </li>
+	    	<!-- ACTIVE RECORD UPDATE: 11/25/18 -->
+	        <!-- <li id="slide1" class="slide">  image_tag @posts[0].image.url(:large) </li>
+	        <li id="slide3" class="slide">  image_tag @posts[1].image.url(:large) </li>
+	        <li id="slide2" class="slide">  image_tag @posts[2].image.url(:large) </li>
+	        <li id="slide4" class="slide">  image_tag @posts[3].image.url(:large) </li>
+	        <li id="slideFinal" class="slide">  image_tag @posts[0].image.url(:large) </li> -->
+
+	        <li id="slide1" class="slide"> <%= image_tag @posts[0].image.variant(resize: "825x200") %> </li>
+	        <li id="slide3" class="slide"> <%= image_tag @posts[1].image.variant(resize: "825x200") %> </li>
+	        <li id="slide2" class="slide"> <%= image_tag @posts[2].image.variant(resize: "825x200") %> </li>
+	        <li id="slide4" class="slide"> <%= image_tag @posts[3].image.variant(resize: "825x200") %> </li>
+	        <li id="slideFinal" class="slide"> <%= image_tag @posts[0].image.variant(resize: "825x200") %> </li>
 	    </ul>
 	</div>
 

@@ -654,14 +654,14 @@ input[type="radio"]:checked + label {
 }
 
 #Arrows {
-	float:right;
-	margin-top: -37px;
-	margin-right: 20px;
-	font-size: 1.8em;
-	background-color: white;
-	border-left: 5px solid white;
-	border-right: 5px solid white;
-	color: #bbb
+    float:right;
+    margin-top: -37px;
+    margin-right: 20px;
+    font-size: 1.8em;
+    background-color: white;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    color: #bbb
 }
 
 .prev {
@@ -715,29 +715,53 @@ input[type="radio"]:checked + label {
 
 
 .mosrow {                       /*--------------- include mos to differentiate */
-	-moz-column-width: 18em;
-	-webkit-column-width: 18em;
-	-moz-column-gap: 1em;
-	-webkit-column-gap:1em; 
+    -moz-column-width: 18em;
+    -webkit-column-width: 18em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap:1em; 
   
 }
 
 .item {
-	display: inline-block;
-	padding:  .25rem;
-	width:  100%; 
+    display: inline-block;
+    padding:  .25rem;
+    width:  100%; 
 }
 
 .tub {
-	position:relative;
-	display: block;
+    position:relative;
+    display: block;
 }
 
 .mosaic {
-	margin: 10px;
+    margin: 10px;
 }
 
 /*-------------------------------------------------------------------*/
+
+/*----------------------------Active Storage---------------------------*/
+
+.download_button {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.download_button .trash {
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    visibility: hidden;
+    color: #333333;
+}
+
+.download_button .trash:hover {
+    color: #9E1616;
+}
+
+/*-------------------------------------------------------------------*/
+
+
 
 /*================================================================*/
 
