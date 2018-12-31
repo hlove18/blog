@@ -5,11 +5,11 @@ class ConvertToActiveStorage < ActiveRecord::Migration[5.2]
 
   def up
     # postgres
-    # get_blob_id = 'LASTVAL()'
+    get_blob_id = 'LASTVAL()'
     # mysql / mariadb
     # get_blob_id = 'LAST_INSERT_ID()'
     # sqlite
-    get_blob_id = 'LAST_INSERT_ROWID()'
+    # get_blob_id = 'LAST_INSERT_ROWID()'
 
     active_storage_blob_statement = ActiveRecord::Base.connection.raw_connection.prepare(<<-SQL)
       INSERT INTO active_storage_blobs (
@@ -77,11 +77,11 @@ class ConvertToActiveStorage < ActiveRecord::Migration[5.2]
 
   def checksum(attachment)
     # local files stored on disk:
-    url = attachment.path
-    Digest::MD5.base64digest(File.read(url))
+    # url = attachment.path
+    # Digest::MD5.base64digest(File.read(url))
 
     # remote files stored on another person's computer:
-    # url = attachment.url
-    # Digest::MD5.base64digest(Net::HTTP.get(URI(url)))
+    url = attachment.url
+    Digest::MD5.base64digest(Net::HTTP.get(URI(url)))
   end
 end
