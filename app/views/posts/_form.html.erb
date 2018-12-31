@@ -50,35 +50,35 @@
                         <span class="trash"><i class="fa fa-times" aria-hidden="true"></i></span>
                     <% end %>
                     <% if post.upload_type(upload) == "audio" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-volume-up" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% elsif post.upload_type(upload) == "zip" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-file-archive-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% elsif post.upload_type(upload) == "pdf" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% elsif post.upload_type(upload) == "code" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-code" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% elsif post.upload_type(upload) == "3d" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-cube" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% elsif post.upload_type(upload) == "gcode" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% elsif post.upload_type(upload) == "laser" %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-object-ungroup" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% else %>
-                        <%= link_to url_for(upload), download: '', class: "btn btn-default" do %>
+                        <%= link_to url_for(upload), :target => "_blank", class: "btn btn-default" do %>
                             <i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= upload.filename %>
                         <% end %>
                     <% end %>
