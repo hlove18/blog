@@ -1,15 +1,6 @@
 <!-- render media -->
 <div class="media">
-  <div class="media-left">
-    <a href="#">
-      <!-- ACTIVE RECORD UPDATE: 11/25/18 -->
-      <!-- image_tag @post.thumbnail.url(:large), :class => "media-object" -->
-      <%= #image_tag post.thumbnail.variant(resize: "100x100"), :class => "media-object" %>
-      <p>
-        <%= render partial: "posts/badge", locals: {post: post} %>
-      </p>
-    </a>
-  </div>
+  
   <div class="media-body">
     <h4 class="media-heading"> <%= link_to post.title, post_path(post) %> </h4>
     <% if post.published %>
