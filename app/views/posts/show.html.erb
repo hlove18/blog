@@ -10,7 +10,7 @@
 	<% if @post.image.attached? %>
     	<%= image_tag @post.image.variant(combine_options: { gravity: 'Center', crop: '825x100+0+0' }), :class => "title-banner hidden-md hidden-sm hidden-xs" %>
 	<% else %>
-    	<%=image_tag("/images/banner/large/missing.png", :class => "title-banner hidden-md hidden-sm hidden-xs") %>
+    	<%=image_tag("/images/banner/small/missing_height_100.png", :class => "title-banner hidden-md hidden-sm hidden-xs") %>
 	<% end %>
   	<h1 id="title"> <%= @post.title %> </h1>
   	<h5 id="date"> <%= @post.date %>&nbsp;&nbsp;<%= render partial: "posts/badge", locals: {post: @post} %></h5>
