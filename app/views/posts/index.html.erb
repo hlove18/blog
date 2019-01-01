@@ -14,7 +14,7 @@
     <%= render partial: "posts/posts_table_small", locals: {posts: @posts} %>
 
     <h1>Posts</h1>
-
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter by Creator:</h4>
     <%= link_to 'ALL', posts_path, class: "btn btn-default badge" %>
     <%= link_to 'BIANCHINI', bianchini_posts_path, class: "btn btn-default badge inactive_bianchini_badge" %>
     <%= link_to 'LOVE', love_posts_path, class: "btn btn-default badge inactive_love_badge" %>
@@ -28,8 +28,8 @@
 <% if is_admin %>
   <h1>All posts - display</h1>
 <% else %>
-  <h1>Posts</h1>
-
+    <h1>Posts</h1>
+    <h4><i class="fa fa-filter" aria-hidden="true"></i> Filter by Creator:</h4>
     <%= link_to 'ALL', posts_path, class: "btn btn-default badge" %>
     <%= link_to 'BIANCHINI', bianchini_posts_path, class: "btn btn-default badge inactive_bianchini_badge" %>
     <%= link_to 'LOVE', love_posts_path, class: "btn btn-default badge inactive_love_badge" %>
