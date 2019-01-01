@@ -294,19 +294,21 @@ body {
     color: #777;
 }
 
-#title {
-    margin-top: 70px;
-}
-
-/* Post title banners */
-
-.title-banner {
-    position: absolute;
-    z-index: -1;
-    margin-top: -60px;
-    opacity: 0.5;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-    border-radius: 5px;
+/*Only perform this CSS when the screen is larger than 1200px */
+@media (min-width: 1200px) {
+    /* Show the slider */
+    #title {
+        margin-top: 70px;
+    }
+    /* Show post title banners */
+    .title-banner {
+        position: absolute;
+        z-index: -1;
+        margin-top: -60px;
+        opacity: 0.5;
+        -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        border-radius: 5px;
+    }
 }
 
 /* CSS below gives coloring to uploaded banner and thubnail image icons */
