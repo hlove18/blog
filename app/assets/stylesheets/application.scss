@@ -120,11 +120,12 @@ body {
     top: 0px;
     position: absolute;
     /*background: linear-gradient(to right, #33363b 65%, rgba(0, 98, 100, .8), rgba(255, 0, 100, .6), transparent);*/
-    background: #BFD7D9;
+    /*Background of BLE: */
+    /*background: #BFD7D9;*/
     /*Background of old BLE */
     /*background: #8A8A8A; */
     /*Background of old H.Love Engineering: */
-    /*background: #33363b;*/
+    background: #33363b;
     height: 257px;
     padding-bottom: 60px;
     z-index: -1;
@@ -165,10 +166,11 @@ body {
 
 .new-logo {
     margin-top: 10px;
-    font-family: 'Bungee Hairline', cursive; /*Use 57px font size*/
+    /*font-family: 'Bungee Hairline', cursive;*/ /*Use 57px font size*/
     /*font-family: tiny_box;*/ /*Use 40px font size*/
     /*font-family: three_d_thirteen_pixel_fonts;*/ /*Use 90px (lower case) 70px (upper case) font size*/
-    font-size: 57px;
+    font-family: 'Major Mono Display', monospace; /* Use 50px (lower case) */
+    font-size: 50px;
     color: #f8f8f2;
     text-align: center;
     /*text-shadow: 2px 0 black*/
@@ -176,7 +178,8 @@ body {
 
 .new-logo a {
     text-decoration: none;
-    color: #272822;
+    /*color: #272822;*/
+    color: #CCCCCC;
 }
 
 .new-logo-small {
@@ -196,9 +199,10 @@ body {
 /*----------------------------navbar-----------------------------*/
 
 .navbar-custom {
-    background-color: #BFD7D9;/*#272822;
+    /*Background of BLE: */
+    /*background-color: #BFD7D9;/*#272822;*/
     /*Background of old H.Love Engineering: */
-    /*background-color: #33363b;*/
+    background-color: #33363b;
     color: #ffffff;
     border-radius: 0;
     /*border-top: solid red 1px;*/
@@ -224,7 +228,9 @@ body {
 }
 
 .navbar-custom .navbar-nav > li > a {
-    color: #272822;
+    /*BLE:*/
+   /* color: #272822;*/
+   color: #eeeeee;
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
@@ -242,8 +248,9 @@ body {
 
 .navbar-custom .navbar-brand {
     /*Colors glyphicon in header and footer*/
-    /* color: #eeeeee;*/
-    color: #272822;
+    color: #eeeeee;
+    /*BLE:*/
+    /*color: #272822;*/
 }
 
 /*----------------------------------------------------------------*/
@@ -792,9 +799,10 @@ footer {
     min-height: 200px;
     height: 100%;
     bottom: 0px;
-    background-color: #BFD7D9;
+    /*Background of BLE: */
+    /*background-color: #BFD7D9;*/
     /*Background of old H.Love Engineering: */
-    /*background-color: #33363b;*/
+    background-color: #33363b;
     margin-top: 10px;
 }
 
@@ -802,7 +810,8 @@ footer table {
     font-family: webly;
     margin-left: 20px;
     margin-bottom: 10px;
-    color: #272822;
+    /*color: #272822;*/
+    color: #eeeeee;
     font-size: 14px;
     width: 260px;
 }
@@ -819,9 +828,10 @@ footer table {
 }*/
 
 footer .navbar-custom {
-    background-color: #BFD7D9;
+    /*Background of BLE: */
+    /*background-color: #BFD7D9;*/
     /*Background of old H.Love Engineering: */
-    /*background-color:#33363b;*/
+    background-color:#33363b;
     color: #ffffff;
     border-radius: 0;
     margin-bottom: 0px;
