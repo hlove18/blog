@@ -51,12 +51,15 @@
 /*-----------------------------END NEW fonts------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Titillium Web';
+    /*font-family: 'Titillium Web';*/
+    font-family: 'Space Mono', monospace;
     color: #f5f5f5;
 }
 
 p, div, td, li {
-    font-family: 'Titillium Web';
+    /*font-family: 'Titillium Web';*/
+    font-family: 'Open Sans';
+    /*font-family: 'Lora', serif;*/
     color: #f5f5f5;
 }
 
@@ -233,8 +236,9 @@ body {
 
 .navbar-custom .navbar-nav > li > a {
     /*BLE:*/
-   /* color: #272822;*/
-   color: #eeeeee;
+    /* color: #272822;*/
+    color: #eeeeee;
+    font-family: 'Space Mono', monospace;
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
@@ -268,7 +272,7 @@ body {
 .page-header {
     margin-top: 0px;
     padding-top: 4.5px;
-    padding-bottom: 4.5px;
+    padding-bottom: 0px;
 }
 
 .page-title {
@@ -338,18 +342,24 @@ body {
     color: #272822;
     text-transform: uppercase;
     background-color: #E07572;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
 }
 
 .bianchini_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #F4C46F;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
 }
 
 .bianchini_love_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #BFD7D9;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
 }
 
 /*active hover:*/
@@ -372,24 +382,28 @@ body {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 .inactive_bianchini_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 .inactive_bianchini_love_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 .inactive_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 /*inactive hover:*/
@@ -419,6 +433,7 @@ body {
 p.published {
     color: #777;
     margin-bottom: 2px;
+    font-family: 'Space Mono', monospace;
 }
 
 p.unpublished {
@@ -496,6 +511,7 @@ p.unpublished {
 
 .sidebar {
     padding: 5px;
+    padding-top: 15px;
     /*background-color: #f5f5f5;*/
     background-color: #33363b;
     /*color: black;*/
@@ -516,6 +532,7 @@ p.unpublished {
 
 a.list-group-item {
     color: #f5f5f5;
+    font-family: 'Space Mono', monospace;
 }
 
 /*.sidebar h4 {
@@ -616,6 +633,7 @@ a.list-group-item.sub-dropdown-element {
 
 .date {
     color: #777;
+    font-family: 'Space Mono', monospace;
 }
 
 .summary::before {
@@ -721,7 +739,7 @@ input[type="radio"]:checked + label {
     /* Show the slider */
     #main {
         margin-top: 200px;
-        border-top: 1px solid black;
+        border-top: 1px solid #f5f5f5;
     }
 }
 
@@ -739,6 +757,10 @@ input[type="radio"]:checked + label {
     /*Resize embedded youtube videos to fit in the body*/
     #content iframe {
         width: 100%;
+    }
+    /*Eliminate extra menu padding for alignment*/
+    .sidebar {
+        padding-top: 0px;
     }
 }
 
@@ -820,13 +842,18 @@ footer {
 }
 
 footer table {
-    font-family: webly;
+    /*font-family: webly;*/
+    font-family: 'Space Mono', monospace;
     margin-left: 20px;
     margin-bottom: 10px;
     /*color: #272822;*/
     color: #eeeeee;
     font-size: 14px;
-    width: 260px;
+    width: 340px;
+}
+
+footer table td {
+    font-family: 'Space Mono', monospace;
 }
 
 /* OLD from h.love engineering*/
