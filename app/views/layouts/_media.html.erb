@@ -1,7 +1,7 @@
 <!-- render media -->
 <div class="media">
   <div class="media-left">
-    <a href="#">
+    <%= link_to post_path(post) do %>
       <!-- ACTIVE RECORD UPDATE: 11/25/18 -->
       <!-- image_tag @post.thumbnail.url(:large), :class => "media-object" -->
       <% if post.thumbnail.attached? %>
@@ -9,10 +9,10 @@
       <% else %>
         <%=image_tag("/images/thumbnail/large/missing.png", :class => "media-object") %>
       <% end %>
-      <p>
-        <%= render partial: "posts/badge", locals: {post: post} %>
-      </p>
-    </a>
+    <% end %>
+    <p>
+      <%= render partial: "posts/badge", locals: {post: post} %>
+    </p>
   </div>
   <div class="media-body">
     <h4 class="media-heading"> <%= link_to post.title, post_path(post) %> </h4>
