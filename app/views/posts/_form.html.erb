@@ -21,7 +21,7 @@
 
         <div class="col col-md-3">
             <br>
-            <%= f.label "Banner image - 825 x 200" %>
+            <%= f.label "Banner - 825x200" %>
             <%= f.file_field :image %>
             <% if not @post.image.attached? %>
                 <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.
@@ -30,7 +30,7 @@
             <% end %>
 
             <br> <br>
-            <%= f.label "Thumbnail - 100 x 100" %>
+            <%= f.label "Thumbnail - 120x120" %>
             <%= f.file_field :thumbnail %>
             <% if not @post.thumbnail.attached? %>
                 <span class="glyphicon glyphicon-remove-circle"></span> No File Uploaded.

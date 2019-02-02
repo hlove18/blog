@@ -51,15 +51,109 @@
 /*-----------------------------END NEW fonts------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Titillium Web';
+    /*font-family: 'Titillium Web';*/
+    font-family: 'Space Mono', monospace;
+    color: #f5f5f5;
 }
 
 p, div, td, li {
-    font-family: 'Titillium Web';
+    /*font-family: 'Titillium Web';*/
+    font-family: 'Open Sans';
+    font-size: 15px;
+    /*font-family: 'Lora', serif;*/
+    color: #f5f5f5;
 }
 
 td {
     padding: 3px;
+}
+
+a {
+    color: #12C4FF;
+}
+
+a:hover {
+    color: yellow;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*----------------------------buttons-----------------------------*/
+
+.btn-default {
+    border: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+    background-color: #33363b;
+    color: #f5f5f5; 
+}
+
+.btn-default:focus {
+    border: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+    background-color: #33363b;
+    color: #f5f5f5;
+}
+
+.btn-default:hover {
+    border: 1px solid #bbb;
+    background-color: #565c64;
+    color: #f5f5f5;
+}
+
+.btn-default:active {
+    background-color: #33363b !important;
+    border: 1px solid #bbb !important;
+    color: #f5f5f5 !important;
+}
+
+.btn-success {
+    border: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+    background-color: #33363b;
+    color: lightgreen; 
+}
+
+.btn-success:focus {
+    border: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+    background-color: #33363b;
+    color: lightgreen; 
+}
+
+.btn-success:hover {
+    border: 1px solid #bbb;
+    background-color: #565c64;
+    color: #f5f5f5;
+}
+
+.btn-success:active {
+    background-color: #3E8A5A !important;
+    border: 1px solid #bbb !important;
+}
+
+.btn-warning {
+    border: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+    background-color: #33363b;
+    color: yellow; 
+}
+
+.btn-warning:focus {
+    border: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+    background-color: #33363b;
+    color: yellow; 
+}
+
+.btn-warning:hover {
+    border: 1px solid #bbb;
+    background-color: #565c64;
+    color: #f5f5f5;
+}
+
+.btn-warning:active {
+    background-color: #efa728 !important;
+    border: 1px solid #bbb !important;
 }
 
 /*-------------------------------------------------------------------*/
@@ -67,8 +161,10 @@ td {
 /*-----------------------------TinyMCE Fixes-------------------------*/
 
 #tinymce {
-    background-color: #ffffff;
-    padding: 5px;
+    /*background-color: #ffffff;
+    padding: 5px;*/
+    background-color: #565c64;
+    color: #f5f5f5;
 }
 
 /*-------------------------------------------------------------------*/
@@ -79,11 +175,13 @@ td {
 }*/
 
 body {
-    background-color: #E8E8E8;
+    /*background-color: #E8E8E8;*/
+    background-color: #33363b;
 }
 
 #content {
-    background-color: white;
+    /*background-color: white;*/
+    background-color: #33363b;
     padding-bottom: 15px;
     min-height: 363px;
     word-wrap: break-word;
@@ -111,7 +209,7 @@ body {
 
 /*============================Header============================*/
 
-#redLine {
+.redLine {
     border-bottom: 1px solid #ad2217;
 }
 
@@ -210,6 +308,10 @@ body {
     /*box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 -1px 0 rgba(0,0,0,0.2), inset 1px 0 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2);*/
 }
 
+.navbar-collapse {
+    box-shadow: none;
+}
+
 .navbar-toggle {
     position: relative;
     float: right;
@@ -219,8 +321,12 @@ body {
     margin-bottom: 8px;
     background-color: #404246;
     background-image: none;
-    border: 1px solid #E8E8E8;
+    border: 1px solid #bbb;
     border-radius: 4px;
+}
+
+.navbar-toggle:hover {
+    background-color: #565c64;
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
@@ -229,12 +335,14 @@ body {
 
 .navbar-custom .navbar-nav > li > a {
     /*BLE:*/
-   /* color: #272822;*/
-   color: #eeeeee;
+    /* color: #272822;*/
+    color: #eeeeee;
+    font-family: 'Space Mono', monospace;
 }
 
 .navbar-custom .navbar-nav > li > a:hover {
-    color: #333;
+    color: #f5f5f5;
+    background-color: #565c64;
 }
 
 .navbar-custom .navbar-nav > .active > a:hover {
@@ -248,9 +356,14 @@ body {
 
 .navbar-custom .navbar-brand {
     /*Colors glyphicon in header and footer*/
-    color: #eeeeee;
+    color: #f5f5f5;
     /*BLE:*/
     /*color: #272822;*/
+}
+
+.navbar-custom .navbar-brand:hover {
+    /*Colors glyphicon in header and footer*/
+    background-color: #565c64;
 }
 
 /*----------------------------------------------------------------*/
@@ -264,6 +377,11 @@ body {
 .page-header {
     margin-top: 0px;
     padding-top: 4.5px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #bbb;
+}
+
+#breadcrums {
     padding-bottom: 4.5px;
 }
 
@@ -321,11 +439,11 @@ body {
 /* CSS below gives coloring to uploaded banner and thubnail image icons */
 
 .glyphicon-remove-circle {
-    color: #DB0000;
+    color: #ff4c4c;
 }
 
 .glyphicon-ok-circle {
-    color: green;
+    color: lightgreen;
 }
 
 /* CSS below colors owner badges*/
@@ -334,32 +452,41 @@ body {
     color: #272822;
     text-transform: uppercase;
     background-color: #E07572;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
 }
 
 .bianchini_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #F4C46F;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
 }
 
 .bianchini_love_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #BFD7D9;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
 }
 
 /*active hover:*/
 
 .btn.love_badge:hover {
     background-color: #F2C4C2;
+    color: #272822;
 }
 
 .btn.bianchini_badge:hover {
     background-color: #fAE2B8;
+    color: #272822;
 }
 
 .btn.bianchini_love_badge:hover {
     background-color: #D8E6E8;
+    color: #272822;
 }
 
 /*inactive:*/
@@ -368,38 +495,45 @@ body {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 .inactive_bianchini_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 .inactive_bianchini_love_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 .inactive_badge {
     color: #272822;
     text-transform: uppercase;
     background-color: #E8E8E8;
+    font-family: 'Space Mono', monospace;
 }
 
 /*inactive hover:*/
 
 .btn.inactive_love_badge:hover {
-    background-color: #F2C4C2;
+    background-color: #E07572;
+    color: #272822;
 }
 
 .btn.inactive_bianchini_badge:hover {
-    background-color: #fAE2B8;
+    background-color: #F4C46F;
+    color: #272822;
 }
 
 .btn.inactive_bianchini_love_badge:hover {
-    background-color: #D8E6E8;
+    background-color: #BFD7D9;
+    color: #272822;
 }
 
 /* For post preview - media */ 
@@ -415,6 +549,7 @@ body {
 p.published {
     color: #777;
     margin-bottom: 2px;
+    font-family: 'Space Mono', monospace;
 }
 
 p.unpublished {
@@ -423,6 +558,10 @@ p.unpublished {
 }
 
 /* Posts table for table on admin page */
+
+#posts_table_small tbody tr td {
+    font-family: 'Space Mono', monospace;
+}
 
 #posts_table span.description {
     display: inline-block;
@@ -438,10 +577,24 @@ p.unpublished {
     width: 150px;
 }
 
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #4b4f56;
+    border: none;
+}
+
+.table-striped > tbody > tr > td {
+    border: none;
+}
+
+.table-striped > thead > tr > th {
+    border-bottom: 1px solid #bbb;
+    font-family: 'Space Mono', monospace;
+}
+
 /* Post thumbnails */
 
 .media-body p {
-    max-height: 81px;
+    max-height: 85px;
     overflow: hidden;
 }
 
@@ -456,8 +609,8 @@ p.unpublished {
 
 .background-tile {
     box-sizing: border-box;
-    border: 1px solid #eeeeee;
-    background-color: #fff;
+    border: 1px solid #bbb;
+    background-color: #33363b;
     border-radius: 5px;
     padding: 1.5em 1.25em;
 }
@@ -475,7 +628,7 @@ p.unpublished {
 /* For log in, log out, sign up, save, and updated notices on top of home page */
 
 .notice {
-    color: green;
+    color: lightgreen;
 }
 
 
@@ -492,8 +645,11 @@ p.unpublished {
 
 .sidebar {
     padding: 5px;
-    background-color: #f5f5f5;
-    color: black;
+    padding-top: 15px;
+    /*background-color: #f5f5f5;*/
+    background-color: #33363b;
+    /*color: black;*/
+    color: #f5f5f5;
     height: auto;
     /*box-shadow: 0px 2px 2px rgba(0, 0, 0, .5);*/
 }
@@ -502,12 +658,23 @@ p.unpublished {
     box-shadow: none;
 }
 
-/*.list-group-item {
+.list-group-item {
     border: none;
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;*/
+    background-color: #33363b;
 }
 
-.sidebar h4 {
+a.list-group-item {
+    color: #f5f5f5;
+    font-family: 'Space Mono', monospace;
+}
+
+a.list-group-item:hover {
+    background-color: #565c64;
+    color: #f5f5f5;
+}
+
+/*.sidebar h4 {
     border-bottom: 1px solid black;
 }*/
 
@@ -522,14 +689,14 @@ p.unpublished {
 }
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover  {
-    background-color: #ddd;
+    background-color: #565c64;
 }
 
 /* For Archives drop down */
-a.list-group-item.dropdown-parent.active {
+/*a.list-group-item.dropdown-parent.active {
     border: 1px solid #ccc;
     color: #555; 
-}
+}*/
 
 a.list-group-item.dropdown-parent.active span.badge {
     color: #777777;
@@ -605,19 +772,20 @@ a.list-group-item.sub-dropdown-element {
 
 .date {
     color: #777;
+    font-family: 'Space Mono', monospace;
 }
 
 .summary::before {
     background-image: linear-gradient( top, 
-            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+            rgba( 51, 54, 59, 0 ) 0%, rgba( 51, 54, 59, 1 ) 100% );
         background-image: -moz-linear-gradient( top, 
-            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+            rgba( 51, 54, 59, 0 ) 0%, rgba( 51, 54, 59, 1 ) 100% );
         background-image: -ms-linear-gradient( top, 
-            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+            rgba( 51, 54, 59, 0 ) 0%, rgba( 51, 54, 59, 1 ) 100% );
         background-image: -o-linear-gradient( top, 
-            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+            rgba( 51, 54, 59, 0 ) 0%, rgba( 51, 54, 59, 1 ) 100% );
         background-image: -webkit-linear-gradient( top, 
-            rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+            rgba( 51, 54, 59, 0 ) 0%, rgba( 51, 54, 59, 1 ) 100% );
     content: "\00a0";
     height: 100%;
     position: absolute;
@@ -625,7 +793,8 @@ a.list-group-item.sub-dropdown-element {
 }
 
 .summaryText {
-    color: black; /*#aaa;*/
+    /*color: black; /*#aaa;*/
+    color: #f5f5f5;
     font-size: 1.1em;
 }
 
@@ -683,9 +852,10 @@ input[type="radio"]:checked + label {
     margin-top: -37px;
     margin-right: 20px;
     font-size: 1.8em;
-    background-color: white;
-    border-left: 5px solid white;
-    border-right: 5px solid white;
+    /*background-color: white;*/
+    background-color: #33363b;
+    border-left: 5px solid #33363b;
+    border-right: 5px solid #33363b;
     color: #bbb
 }
 
@@ -708,7 +878,7 @@ input[type="radio"]:checked + label {
     /* Show the slider */
     #main {
         margin-top: 200px;
-        border-top: 1px solid black;
+        border-top: 1px solid #bbb;
     }
 }
 
@@ -726,6 +896,10 @@ input[type="radio"]:checked + label {
     /*Resize embedded youtube videos to fit in the body*/
     #content iframe {
         width: 100%;
+    }
+    /*Eliminate extra menu padding for alignment*/
+    .sidebar {
+        padding-top: 0px;
     }
 }
 
@@ -787,6 +961,25 @@ input[type="radio"]:checked + label {
 /*-------------------------------------------------------------------*/
 
 
+/*--------------------------------Form-------------------------------*/
+
+.form-control {
+    background-color: #565c64;
+    color: #f5f5f5;
+}
+
+#post_owner {
+    background-color: #565c64;
+    color: #f5f5f5;
+}
+
+label {
+    font-family: 'Space Mono', monospace;
+}
+
+/*-------------------------------------------------------------------*/
+
+
 
 /*================================================================*/
 
@@ -804,16 +997,26 @@ footer {
     /*Background of old H.Love Engineering: */
     background-color: #33363b;
     margin-top: 10px;
+    /*border-top: 1px solid #bbb;*/
 }
 
 footer table {
-    font-family: webly;
+    /*font-family: webly;*/
+    font-family: 'Space Mono', monospace;
     margin-left: 20px;
     margin-bottom: 10px;
     /*color: #272822;*/
     color: #eeeeee;
     font-size: 14px;
-    width: 260px;
+    width: 340px;
+}
+
+footer table th {
+    font-family: 'Space Mono', monospace;
+}
+
+footer table td {
+    font-family: 'Space Mono', monospace;
 }
 
 /* OLD from h.love engineering*/

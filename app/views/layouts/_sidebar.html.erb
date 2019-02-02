@@ -1,10 +1,10 @@
 <!-- render sidebar -->
 <div class="sidebar col col-sm-3">
-    <h4 class="hidden-xs">Menu</h4>
+    <!-- <h4 class="hidden-xs" style="border-bottom: 1px solid #bbb">Menu</h4>
     <div class="list-group hidden-xs">
         <%= link_to "Home", root_path, class: "list-group-item" %>
         <%= link_to "Posts", posts_path, class: "list-group-item" %>
-    </div>
+    </div> -->
     <h4 style="border-bottom: 1px solid #bbb">Recent</h4>
         <!-- LINE BELOW IS SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
         <!-- @post = Post.all.published.order(:published_at).last -->
@@ -16,18 +16,18 @@
             <!-- render media; unique responsiveness, so render is not used -->
             <div class="media">
                 <div class="media-left">
-                    <a href="#">
+                    <%= link_to post_path(@post) do %>
                         <!-- ACTIVE RECORD UPDATE: 11/25/18 -->
                         <!-- image_tag @post.thumbnail.url(:large), :class => "media-object" -->
                         <% if @post.thumbnail.attached? %>
-                            <%= image_tag @post.thumbnail.variant(resize: "100x100"), :class => "media-object" %>
+                            <%= image_tag @post.thumbnail.variant(resize: "120x120"), :class => "media-object" %>
                         <% else %>
                             <%=image_tag("/images/thumbnail/large/missing.png", :class => "media-object") %>
                         <% end %>
-                        <p>
-                            <%= render partial: "posts/badge", locals: {post: @post} %>
-                        </p>
-                    </a>
+                    <% end %>
+                    <p>
+                        <%= render partial: "posts/badge", locals: {post: @post} %>
+                    </p>
                 </div>
                 <div class="media-body hidden-md hidden-sm">
                     <h4 class="media-heading"> <%= link_to @post.title, post_path(@post) %> </h4>
@@ -47,7 +47,7 @@
     <!-- if Post.published.length != 0 -->
     <!-- FAST! Line below replaces line above and is much faster! -->
     <% if Post.select("id").published.count("id") != 0 %>
-        <h4>Archives</h4>
+        <h4 style="border-bottom: 1px solid #bbb">Archives</h4>
         <div id="sidebar" class="list-group">
             <!-- LINE BELOW IS SLOW!!! (to test, uncomment line, and embrace in "<% %>") -->
             <!-- @published_posts = Post.published -->
@@ -129,9 +129,9 @@
             </div>
     </div> -->
 
-    <h4>Follow</h4>
+    <h4 style="border-bottom: 1px solid #bbb">Follow</h4>
     <div id="sidebar" class="list-group">
-        <a href="https://www.youtube.com/channel/UCsDZ-tjWxryoCx99ESTngrw" class="list-group-item" target="_blank">Youtube&nbsp;&nbsp;<i class="fa fa-youtube"></i></a>
+        <a href="https://www.youtube.com/channel/UCsDZ-tjWxryoCx99ESTngrw" class="list-group-item" target="_blank">YouTube&nbsp;<i class="fa fa-youtube"></i></a>
     </div>
 </div>
 <!-- end render sidebar -->
