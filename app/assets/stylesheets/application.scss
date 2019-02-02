@@ -59,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 p, div, td, li {
     /*font-family: 'Titillium Web';*/
     font-family: 'Open Sans';
+    font-size: 15px;
     /*font-family: 'Lora', serif;*/
     color: #f5f5f5;
 }
@@ -206,7 +207,7 @@ body {
 
 /*============================Header============================*/
 
-#redLine {
+.redLine {
     border-bottom: 1px solid #ad2217;
 }
 
@@ -588,8 +589,8 @@ p.unpublished {
 
 .background-tile {
     box-sizing: border-box;
-    border: 1px solid #eeeeee;
-    background-color: #fff;
+    border: 1px solid #bbb;
+    background-color: #33363b;
     border-radius: 5px;
     padding: 1.5em 1.25em;
 }
@@ -607,7 +608,7 @@ p.unpublished {
 /* For log in, log out, sign up, save, and updated notices on top of home page */
 
 .notice {
-    color: green;
+    color: lightgreen;
 }
 
 
@@ -957,6 +958,7 @@ footer {
     /*Background of old H.Love Engineering: */
     background-color: #33363b;
     margin-top: 10px;
+    /*border-top: 1px solid #bbb;*/
 }
 
 footer table {
