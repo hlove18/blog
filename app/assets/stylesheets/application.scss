@@ -643,7 +643,7 @@ p.unpublished {
 /* Post thumbnails */
 
 .media-body p {
-    max-height: 85px;
+    max-height: 90px;
     overflow: hidden;
 }
 
@@ -883,7 +883,7 @@ input[type="radio"] + label {
     height: 2px;  
     vertical-align: middle;
     margin-right: 10px;  
-    background-color: #bbb; 
+    background-color: #5C5C5C; 
     /*box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .5);*/
     /*border: 1px solid #969696;*/
 }
@@ -891,13 +891,13 @@ input[type="radio"] + label {
 input[type="radio"]:checked + label {
     font-size: 50px;
     line-height: 19px;
-    background-color: #5C5C5C;
+    background-color: #bbb;
     text-shadow: 0px 0px 3px #eee;
 }
 
 #Arrows {
     float:right;
-    margin-top: -37px;
+    margin-top: -40px;
     margin-right: 20px;
     font-size: 1.8em;
     /*background-color: white;*/
