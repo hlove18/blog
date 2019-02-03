@@ -458,6 +458,45 @@ body {
 
 /* CSS below colors owner badges*/
 
+.love_dot {
+    height: 18px;
+    width: 18px;
+    background-color: #E07572;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.bianchini_dot {
+    height: 18px;
+    width: 18px;
+    background-color: #F4C46F;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.bianchini_love_dot {
+    height: 18px;
+    width: 18px;
+    background-color: #BFD7D9;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+}
+
 .love_badge {
     color: #272822;
     text-transform: uppercase;

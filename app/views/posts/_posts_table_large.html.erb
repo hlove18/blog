@@ -12,9 +12,12 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td>
+        <td><%= link_to post.title, post %></td>
+        <td class="hidden-md hidden-sm hidden-xs">
           <%= render partial: "posts/badge", locals: {post: post} %>
+        </td>
+        <td class="visible-md visible-sm visible-xs">
+          <%= render partial: "posts/dot", locals: {post: post} %>
         </td>
         <!-- Body data may go here -->
         <% if user_signed_in? and current_user.admin %>
@@ -24,10 +27,18 @@
             <td> <%= link_to 'Publish', publish_post_path(post), class: "btn btn-warning", method: :put %> </td>
           <% end %>
         <% end %>
-        <td> <%= link_to 'Show', post %></td>
+        <!-- <td> <%= link_to 'Show', post %></td> -->
         <% if user_signed_in? and current_user.admin %>
-          <td> <%= link_to 'Edit', edit_post_path(post) %> </td>
-          <td> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+          <td>
+            <%= link_to edit_post_path(post) do %>
+              <i class="fa fa-pencil-square-o" style="font-size: 24px" aria-hidden="true"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa fa-trash-o" style="font-size: 24px" aria-hidden="true"></i>
+            <% end %>
+          </td>
         <% end %>
       </tr>
     <% end %>
