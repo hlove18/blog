@@ -24,9 +24,11 @@ document.addEventListener("turbolinks:load", function() {
 		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
 		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright numlist bullist outdent indent | table toc | code codesample codeSC | imageupload | image media link charmap',
 		height: 500,
-		skin_url: '/app/assets/stylesheets/darkmode/skin.min.css',
+		skin_url: '/app/assets/stylesheets/darkmode',
 		content_css: [
+			"https://fonts.googleapis.com/css?family=Space+Mono",
 			"https://fonts.googleapis.com/css?family=Titillium+Web:400,600",
+			"https://fonts.googleapis.com/css?family=Open+Sans",
 			// same thing: "<%= asset_path('application.scss') %>",
 			"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
 			"<%= asset_path 'application.scss' %>"
@@ -48,8 +50,8 @@ document.addEventListener("turbolinks:load", function() {
 		browser_spellcheck: true,
 		branding: false,
 		//content_css : '/app/assets/stylesheets/application.scss',
-  		font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n;Titillium Web=Titillium Web;Webly=webly',
-  		fontsize_formats: '8pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt',
+  		font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n;Titillium Web=Titillium Web;Webly=webly;Space Mono=Space Mono;Open Sans=Open Sans',
+  		fontsize_formats: '8pt 10pt 11pt 12pt 14pt 15pt 18pt 24pt 36pt',
   		setup: function(editor) {
             var inp = $('<input id="tinymce-uploader" type="file" name="pic" accept="image/*" style="display:none">');
             $(editor.getElement()).parent().append(inp);
