@@ -20,12 +20,12 @@
 document.addEventListener("turbolinks:load", function() {
 	Prism.highlightAll();
 	tinymce.remove();	//remove previous intances of tinymce
-	tinymce.init({ selector:'textarea#post_body',
+	tinymce.init({
+		selector:'textarea#post_body',
 		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
 		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | removeformat | alignleft aligncenter alignright numlist bullist outdent indent | table | code codesample codeSC | imageupload | image media link charmap |',
 		height: 500,
-		skin:false,
-		skin_url: '/app/assets/stylesheets/darkmode',
+		skin: false,
 		content_css: [
 			"https://fonts.googleapis.com/css?family=Space+Mono",
 			"https://fonts.googleapis.com/css?family=Titillium+Web:400,600",
