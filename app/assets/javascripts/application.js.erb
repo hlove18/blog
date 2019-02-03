@@ -22,8 +22,9 @@ document.addEventListener("turbolinks:load", function() {
 	tinymce.remove();	//remove previous intances of tinymce
 	tinymce.init({ selector:'textarea#post_body',
 		plugins: "codesample code charmap image imagetools link media table toc lists advlist",
-		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | alignleft aligncenter alignright numlist bullist outdent indent | table toc | code codesample codeSC | imageupload | image media link charmap',
+		toolbar: 'undo redo styleselect | fontselect fontsizeselect | bold italic | removeformat | alignleft aligncenter alignright numlist bullist outdent indent | table | code codesample codeSC | imageupload | image media link charmap |',
 		height: 500,
+		skin:false,
 		skin_url: '/app/assets/stylesheets/darkmode',
 		content_css: [
 			"https://fonts.googleapis.com/css?family=Space+Mono",
