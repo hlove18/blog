@@ -7,7 +7,7 @@
       <% if post.thumbnail.attached? %>
         <%= image_tag post.thumbnail.variant(resize: "120x120"), :class => "media-object" %>
       <% else %>
-        <%=image_tag("/images/thumbnail/large/missing.png", :class => "media-object") %>
+        <%=image_tag("/images/thumbnail/large/missing120.png", :class => "media-object") %>
       <% end %>
     <% end %>
     <p>
