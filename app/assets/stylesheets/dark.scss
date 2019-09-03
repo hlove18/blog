@@ -1,0 +1,13 @@
+/*DARK THEME*/
+
+@import "application";
+$main_bg_color: black;
+@include application($main_bg_color);
+
+/*-----------------------------variables------------------------------*/
+
+/*:root {
+    --main-bg-color: black;
+}*/
+
+/*-------------------------------------------------------------------*/

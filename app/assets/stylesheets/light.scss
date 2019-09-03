@@ -1,0 +1,13 @@
+/*LIGHT THEME*/
+
+@import "application";
+$main_bg_color: white;
+@include application($main_bg_color);
+
+/*-----------------------------variables------------------------------*/
+
+/*:root {
+    --main-bg-color: white;
+}*/
+
+/*-------------------------------------------------------------------*/
