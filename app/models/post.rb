@@ -64,7 +64,9 @@ class Post < ApplicationRecord
  		elsif upload.filename.extension_with_delimiter() == ".pdf"
  			return "pdf"
  		# Code
- 		elsif upload.text? || upload.filename.extension_with_delimiter() == ".ino"
+ 		elsif upload.text? || upload.filename.extension_with_delimiter() == ".ino" || 
+ 			    upload.filename.extension_with_delimiter() == ".asm" ||
+ 			    upload.filename.extension_with_delimiter() == ".hex"
  			return "code" 
  		# Zip
  		elsif upload.content_type == "application/zip"
